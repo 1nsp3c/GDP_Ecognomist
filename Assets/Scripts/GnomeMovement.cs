@@ -8,17 +8,23 @@ public class GnomeMovement : MonoBehaviour
     public float speed = 10f;
     public float jumpHeight = 10f;
 
+    public int maxHealth = 20;
+    public int currentHealth;
+
     public bool hasJumped;
     public bool facingRight = true;
     public bool isRunning = false;
     public Animator animator;
 
+    public HealthBar healthBar;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -44,9 +50,7 @@ public class GnomeMovement : MonoBehaviour
     }
     public void Flip()
     {
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
+        transform.Rotate(new Vector3(0, 180, 0));
         facingRight = !facingRight;
     }
     public void Jumping()
@@ -67,6 +71,12 @@ public class GnomeMovement : MonoBehaviour
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
+            TakeDamage(4);
         }
+    }
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }
