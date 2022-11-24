@@ -20,27 +20,54 @@ public class GnomeMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    private bool moveLeft;
+    private bool moveRight;
+    private float horizontalMove;
+
+    public void PointerDownLeft() 
+    {
+        moveLeft = true;
+    }
+    public void PointerUpLeft() 
+    {
+        moveLeft = false;
+    }
+    public void PointerDownRight() 
+    {
+        moveRight = true;
+    }
+    public void PointerUpRight() 
+    {
+        moveRight = false;
+    }
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
+        moveLeft = false;
+        moveRight = false;
     }
+
 
     // Update is called once per frame
     void Update()
     {
         Jumping();
-        if (Input.GetAxisRaw("Horizontal") > 0 && !facingRight)
+        MovePlayer();
+        if (!facingRight && moveRight)
         {
             Flip();
         }
-        if (Input.GetAxisRaw("Horizontal") < 0 && facingRight)
+        if (facingRight && moveLeft)
         {
             Flip();
         }
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+        
+        //rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
+
         animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
     }
     public bool isGrounded()
@@ -77,5 +104,21 @@ public class GnomeMovement : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
+
+    void MovePlayer() 
+    {
+        if (moveLeft)
+        {
+            horizontalMove = -speed;
+        }
+        else if (moveRight)
+        {
+            horizontalMove = speed;
+        }
+        else 
+        {
+            horizontalMove = 0;
+        }
     }
 }
