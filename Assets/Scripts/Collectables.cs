@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collectables : MonoBehaviour
 {
-    public Collider2D colButton;  //collider at the end of a level
+    //public Collider2D colButton;  //collider at the end of a level
 
     ArrayList collectArray = new ArrayList(); //Arraylist storing collectables
 
