@@ -7,6 +7,7 @@ public class GnomeMovement : MonoBehaviour
     Rigidbody2D rb;
     public float speed = 10f;
     public float jumpHeight = 10f;
+    public bool canDoubleJump;
 
     public int maxHealth = 20;
     public int currentHealth;
@@ -99,6 +100,23 @@ public class GnomeMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
         }
+    }
+    public void JumpButton()
+    {
+        if (isGrounded())
+        {
+            rb.velocity = Vector2.up * jumpHeight;
+            Invoke("EnableDoubleJump", 0.1f);
+        }
+        if (canDoubleJump)
+        {
+            rb.velocity = Vector2.up * jumpHeight;
+            canDoubleJump = false;
+        }
+    }
+    public void EnableDoubleJump()
+    {
+        canDoubleJump = true;
     }
     public void TakeDamage(int damage)
     {
