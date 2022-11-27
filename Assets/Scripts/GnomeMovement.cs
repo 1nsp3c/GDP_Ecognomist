@@ -129,14 +129,17 @@ public class GnomeMovement : MonoBehaviour
         if (moveLeft)
         {
             horizontalMove = -speed;
+            animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
         }
         else if (moveRight)
         {
             horizontalMove = speed;
+            animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
         }
         else 
         {
             horizontalMove = 0;
+            animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
         }
     }
 }
