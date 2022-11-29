@@ -17,7 +17,7 @@ public class GnomeMovement : MonoBehaviour
     public bool isRunning = false;
     public Animator animator;
 
-    public HealthBar healthBar;
+    public EnergyBar energyBar;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -45,7 +45,7 @@ public class GnomeMovement : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        energyBar.SetMaxHealth(maxHealth);
         rb = GetComponent<Rigidbody2D>();
         moveLeft = false;
         moveRight = false;
@@ -121,7 +121,7 @@ public class GnomeMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+        energyBar.SetHealth(currentHealth);
     }
 
     void MovePlayer() 
