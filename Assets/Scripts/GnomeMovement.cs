@@ -144,6 +144,6 @@ public class GnomeMovement : MonoBehaviour
     }
     public void PlayerAttack()
     {
-
+        animator.SetTrigger("Attack");
     }
 }

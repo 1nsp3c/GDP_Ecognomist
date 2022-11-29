@@ -1310,6 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1556,6 +1557,7 @@ GameObject:
   - component: {fileID: 946876080}
   - component: {fileID: 946876079}
   - component: {fileID: 946876078}
+  - component: {fileID: 946876081}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -1580,8 +1582,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 659, y: -272}
-  m_SizeDelta: {x: 4.14, y: 4.03}
+  m_AnchoredPosition: {x: 636.27814, y: -294.0333}
+  m_SizeDelta: {x: 2.969, y: 2.894}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &946876078
 MonoBehaviour:
@@ -1662,7 +1664,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1468432545, guid: 2e6352fa16cae2742935a92b9485f316, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1670,9 +1672,38 @@ SpriteRenderer:
   m_Size: {x: 4.14, y: 4.03}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &946876081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946876076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 885344729}
+          m_TargetAssemblyTypeName: GnomeMovement, Assembly-CSharp
+          m_MethodName: PlayerAttack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &954531880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,8 +2797,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 378, y: -263}
-  m_SizeDelta: {x: 11.968, y: 4.85}
+  m_AnchoredPosition: {x: 360.098, y: -280.214}
+  m_SizeDelta: {x: 9.864, y: 3.937}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1501480378
 MonoBehaviour:
