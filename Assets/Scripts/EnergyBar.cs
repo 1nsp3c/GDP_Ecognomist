@@ -2,22 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.EventSystems.EventTrigger;
+
 public class EnergyBar : MonoBehaviour
 {
     public Slider slider;
-    public Gradient healthGradient;
+    public Gradient energyGradient;
     public Image fill;
-    public void SetHealth(int health)
-    {
-        slider.value = health;
 
-        fill.color = healthGradient.Evaluate(slider.normalizedValue);
+    private void Start()
+    {
+        slider.value = 0;
     }
-    public void SetMaxHealth(int health)
+    public void SetEnergy(int energy)
     {
-        slider.maxValue = health;
-        slider.value = health;
+        slider.value = energy;
 
-        fill.color = healthGradient.Evaluate(1f);
+        fill.color = energyGradient.Evaluate(slider.normalizedValue);
+    }
+    public void SetMaxEnergy(int energy)
+    {
+        slider.maxValue = energy;
+        slider.value = energy;
+
+        fill.color = energyGradient.Evaluate(1f);
     }
 }

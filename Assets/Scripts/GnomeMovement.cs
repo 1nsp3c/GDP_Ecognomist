@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GnomeMovement : MonoBehaviour
@@ -9,8 +10,9 @@ public class GnomeMovement : MonoBehaviour
     public float jumpHeight = 10f;
     public bool canDoubleJump;
 
-    public int maxHealth = 20;
-    public int currentHealth;
+    public int maxEnergy = 20;
+    public int currentEnergy = 0;
+    public int seedEnergy = 6;
 
     public bool hasJumped;
     public bool facingRight = true;
@@ -24,6 +26,12 @@ public class GnomeMovement : MonoBehaviour
     private bool moveLeft;
     private bool moveRight;
     private float horizontalMove;
+
+    //public Collider2D colButton;  //collider at the end of a level
+    public GameObject seedText;
+    private TextMeshProUGUI textMeshSeed;
+
+    ArrayList collectArray = new ArrayList(); //Arraylist storing collectables
 
     public void PointerDownLeft() 
     {
@@ -44,11 +52,12 @@ public class GnomeMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
-        energyBar.SetMaxHealth(maxHealth);
+        currentEnergy = 0;
+        energyBar.SetMaxEnergy(maxEnergy);
         rb = GetComponent<Rigidbody2D>();
         moveLeft = false;
         moveRight = false;
+        textMeshSeed = seedText.GetComponent<TextMeshProUGUI>();
     }
 
 
@@ -65,8 +74,8 @@ public class GnomeMovement : MonoBehaviour
         {
             Flip();
         }
-        
-        //rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+
+        textMeshSeed.text = "X : " + collectArray.Count;
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
 
         animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
@@ -118,10 +127,10 @@ public class GnomeMovement : MonoBehaviour
     {
         canDoubleJump = true;
     }
-    public void TakeDamage(int damage)
+    public void AddEnergy(int energy)
     {
-        currentHealth -= damage;
-        energyBar.SetHealth(currentHealth);
+        currentEnergy += energy;
+        energyBar.SetEnergy(currentEnergy);
     }
 
     void MovePlayer() 
@@ -145,5 +154,16 @@ public class GnomeMovement : MonoBehaviour
     public void PlayerAttack()
     {
         animator.SetTrigger("Attack");
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Collectables")  //tags with the name collectables
+        {
+            AddEnergy(seedEnergy);
+            Destroy(collision.gameObject);          //destroy collectable
+            //colButton.GetComponent<Collider>().isTrigger = true;  //collider on tirgger is enabled
+
+            collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
+        }
     }
 }
