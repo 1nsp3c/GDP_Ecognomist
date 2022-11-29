@@ -142,4 +142,8 @@ public class GnomeMovement : MonoBehaviour
             animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
         }
     }
+    public void PlayerAttack()
+    {
+
+    }
 }
