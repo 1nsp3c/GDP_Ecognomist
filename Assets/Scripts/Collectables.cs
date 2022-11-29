@@ -21,7 +21,7 @@ public class Collectables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMeshSeed.text = "Count : " + collectArray.Count;
+        textMeshSeed.text = "X : " + collectArray.Count;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
