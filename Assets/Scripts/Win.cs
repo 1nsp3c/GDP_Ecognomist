@@ -6,11 +6,12 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
-    public TextMeshProUGUI text;
+    public GameObject WinScreen;
     public Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        WinScreen.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Win : MonoBehaviour
     {
       if (collision.gameObject.tag == "Player")
         {
-            text.gameObject.SetActive(true);
+            WinScreen.gameObject.SetActive(true);
             rb.gameObject.SetActive(false);
         }
     }

@@ -26,6 +26,7 @@ public class GnomeMovement : MonoBehaviour
     private bool moveLeft;
     private bool moveRight;
     private float horizontalMove;
+    public TemperatureBar temperatureBar;
 
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
@@ -160,6 +161,7 @@ public class GnomeMovement : MonoBehaviour
         if (collision.gameObject.tag == "Collectables")  //tags with the name collectables
         {
             AddEnergy(seedEnergy);
+            temperatureBar.ResetSlider();
             Destroy(collision.gameObject);          //destroy collectable
             //colButton.GetComponent<Collider>().isTrigger = true;  //collider on tirgger is enabled
 
