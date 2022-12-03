@@ -32,7 +32,9 @@ public class GnomeMovement : MonoBehaviour
     public GameObject seedText;
     private TextMeshProUGUI textMeshSeed;
 
-    ArrayList collectArray = new ArrayList(); //Arraylist storing collectables
+    public Tree tree;
+
+    public ArrayList collectArray = new ArrayList(); //Arraylist storing collectables
 
     public void PointerDownLeft() 
     {
@@ -166,6 +168,20 @@ public class GnomeMovement : MonoBehaviour
             //colButton.GetComponent<Collider>().isTrigger = true;  //collider on tirgger is enabled
 
             collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
+        }
+        if (collision.gameObject.tag == "Tree")
+        {
+            plantTree();
+        }
+    }
+
+    private void plantTree()
+    {
+        int seedCount = collectArray.Count;
+
+        for (int i = 0; i < seedCount; i++)
+        {
+            tree.treeList[i].SetActive(true);
         }
     }
 }
