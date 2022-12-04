@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GnomeMovement : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class GnomeMovement : MonoBehaviour
     private bool moveRight;
     private float horizontalMove;
     public TemperatureBar temperatureBar;
+    public GameObject WinScreen;
 
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
@@ -61,6 +63,7 @@ public class GnomeMovement : MonoBehaviour
         moveLeft = false;
         moveRight = false;
         textMeshSeed = seedText.GetComponent<TextMeshProUGUI>();
+        WinScreen.gameObject.SetActive(false);
     }
 
 
@@ -172,9 +175,13 @@ public class GnomeMovement : MonoBehaviour
         if (collision.gameObject.tag == "Tree")
         {
             plantTree();
+            if (collectArray.Count == 5)
+            { 
+                WinScreen.gameObject.SetActive(true);
+                rb.gameObject.SetActive(false);
+            }
         }
     }
-
     private void plantTree()
     {
         int seedCount = collectArray.Count;

@@ -1594,6 +1594,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   temperatureBar: {fileID: 0}
+  WinScreen: {fileID: 0}
   seedText: {fileID: 0}
   tree: {fileID: 0}
 --- !u!1 &453455192
@@ -2635,7 +2636,6 @@ GameObject:
   m_Component:
   - component: {fileID: 755228759}
   - component: {fileID: 755228758}
-  - component: {fileID: 755228757}
   m_Layer: 0
   m_Name: WinCollider
   m_TagString: Untagged
@@ -2643,20 +2643,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &755228757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755228756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1e53eea7349a249bd48d12b34c1f8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinScreen: {fileID: 806128345}
-  rb: {fileID: 885344730}
 --- !u!61 &755228758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3453,6 +3439,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   temperatureBar: {fileID: 2015721663}
+  WinScreen: {fileID: 806128345}
   seedText: {fileID: 816496872}
   tree: {fileID: 308339749}
 --- !u!50 &885344730
