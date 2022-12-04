@@ -29,6 +29,7 @@ public class GnomeMovement : MonoBehaviour
     private float horizontalMove;
     public TemperatureBar temperatureBar;
     public GameObject WinScreen;
+    public GameObject loseScreen;
 
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
@@ -180,6 +181,11 @@ public class GnomeMovement : MonoBehaviour
                 WinScreen.gameObject.SetActive(true);
                 rb.gameObject.SetActive(false);
             }
+        }
+        if (collision.gameObject.layer == 6)
+        {
+            loseScreen.gameObject.SetActive(true);
+            Destroy(gameObject);
         }
     }
     private void plantTree()
