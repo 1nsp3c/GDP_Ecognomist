@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float walkSpeed;
+    public float walkSpeed, range, timeBetweenShots, shootSpeed;
+    private float distToPlayer;
     public bool patrol;
-    private bool mustFlip;
+    private bool mustFlip, canShoot;
     private Rigidbody2D rb2d;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public Collider2D bodyCollider;
+    public Transform player, shootPos;
+    public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
     {
         patrol = true;
         rb2d = GetComponent<Rigidbody2D>();
+        canShoot = true;
     }
 
     // Update is called once per frame
@@ -25,7 +29,29 @@ public class Enemy : MonoBehaviour
         if (patrol) 
         {
             Patrol();
+
         }
+        distToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (distToPlayer <= range)
+        {
+            if (player.position.x > transform.position.x && transform.localScale.x < 0 || player.position.x < transform.position.x && transform.localScale.x > 0)
+            {
+                Flip();
+            }
+
+            patrol = false;
+            rb2d.velocity = Vector2.zero;
+
+            if(canShoot)
+            StartCoroutine(Shoot());
+        }
+        else 
+        {
+            patrol = true;
+        }
+
+        
     }
 
     private void FixedUpdate()
@@ -50,5 +76,16 @@ public class Enemy : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
         patrol = true; 
+    }
+
+    IEnumerator Shoot() 
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(timeBetweenShots);
+        GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
+
+        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * walkSpeed * Time.fixedDeltaTime, 0);
+        canShoot = true;
+
     }
 }
