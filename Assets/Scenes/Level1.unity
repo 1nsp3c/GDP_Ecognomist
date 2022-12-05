@@ -1760,7 +1760,6 @@ MonoBehaviour:
   jumpHeight: 10
   canDoubleJump: 0
   maxEnergy: 20
-  currentEnergy: 0
   seedEnergy: 6
   hasJumped: 0
   facingRight: 1
@@ -1776,6 +1775,8 @@ MonoBehaviour:
   loseScreen: {fileID: 0}
   seedText: {fileID: 0}
   tree: {fileID: 0}
+  damageCooldown: 0
+  damageTimer: 0
 --- !u!1 &453455192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3953,8 +3954,7 @@ MonoBehaviour:
   speed: 10
   jumpHeight: 12
   canDoubleJump: 0
-  maxEnergy: 5
-  currentEnergy: 0
+  maxEnergy: 30
   seedEnergy: 1
   hasJumped: 0
   facingRight: 1
@@ -3970,6 +3970,8 @@ MonoBehaviour:
   loseScreen: {fileID: 351246198}
   seedText: {fileID: 816496872}
   tree: {fileID: 308339749}
+  damageCooldown: 1
+  damageTimer: 0
 --- !u!50 &885344730
 Rigidbody2D:
   serializedVersion: 4

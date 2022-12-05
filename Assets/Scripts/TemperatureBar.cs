@@ -12,7 +12,7 @@ public class TemperatureBar : MonoBehaviour
     void Start()
     {
         slider.minValue = 0f;
-        slider.maxValue = 50f;
+        slider.maxValue = 300f;
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class TemperatureBar : MonoBehaviour
     {
         slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, fillTime);
 
-        fillTime += 0.375f * Time.deltaTime;
+        fillTime += 0.15f * Time.deltaTime;
     }
 
     public void ResetSlider()

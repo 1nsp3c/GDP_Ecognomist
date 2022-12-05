@@ -12,9 +12,9 @@ public class EnergyBar : MonoBehaviour
 
     private void Start()
     {
-        slider.value = 0;
+        slider.value = 300;
     }
-    public void SetEnergy(int energy)
+    public void SetEnergy(float energy)
     {
         slider.value = energy;
 

@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class GnomeMovement : MonoBehaviour
 {
@@ -12,8 +14,7 @@ public class GnomeMovement : MonoBehaviour
     public bool canDoubleJump;
 
     public int maxEnergy = 20;
-    public int currentEnergy = 0;
-    public int seedEnergy = 6;
+    public float seedEnergy = 6;
 
     public bool hasJumped;
     public bool facingRight = true;
@@ -37,6 +38,9 @@ public class GnomeMovement : MonoBehaviour
 
     public Tree tree;
 
+    public float damageCooldown;
+    [HideInInspector] public float damageTimer;
+
     public ArrayList collectArray = new ArrayList(); //Arraylist storing collectables
 
     public void PointerDownLeft() 
@@ -58,19 +62,20 @@ public class GnomeMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentEnergy = 0;
         energyBar.SetMaxEnergy(maxEnergy);
         rb = GetComponent<Rigidbody2D>();
         moveLeft = false;
         moveRight = false;
         textMeshSeed = seedText.GetComponent<TextMeshProUGUI>();
         WinScreen.gameObject.SetActive(false);
+        
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        CheckMaxTemp();
         Jumping();
         MovePlayer();
         if (!facingRight && moveRight)
@@ -134,10 +139,10 @@ public class GnomeMovement : MonoBehaviour
     {
         canDoubleJump = true;
     }
-    public void AddEnergy(int energy)
+    public void AddEnergy(float energy)
     {
-        currentEnergy += energy;
-        energyBar.SetEnergy(currentEnergy);
+        energyBar.slider.value += energy;
+        energyBar.SetEnergy(energyBar.slider.value);
     }
 
     void MovePlayer() 
@@ -166,7 +171,7 @@ public class GnomeMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collectables")  //tags with the name collectables
         {
-            AddEnergy(seedEnergy);
+            AddEnergy(10);
             temperatureBar.ResetSlider();
             Destroy(collision.gameObject);          //destroy collectable
             //colButton.GetComponent<Collider>().isTrigger = true;  //collider on tirgger is enabled
@@ -195,6 +200,20 @@ public class GnomeMovement : MonoBehaviour
         for (int i = 0; i < seedCount; i++)
         {
             tree.treeList[i].SetActive(true);
+        }
+    }
+    void CheckMaxTemp()
+    {
+        if (temperatureBar.slider.value == temperatureBar.slider.maxValue)
+        {
+            damageTimer -= Time.deltaTime;
+
+            if (damageTimer <= 0)
+            {
+                energyBar.slider.value -= 1;
+
+                damageTimer = damageCooldown;
+            }
         }
     }
 }
