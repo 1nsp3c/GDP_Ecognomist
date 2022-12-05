@@ -12,8 +12,7 @@ public class GnomeMovement : MonoBehaviour
     public float speed = 10f;
     public float jumpHeight = 10f;
     public bool canDoubleJump;
-    
-    private bool canShoot;
+
     public float timeBetweenShots, shootSpeed;
     public GameObject sticks;
     public Transform shootPos;
@@ -177,12 +176,8 @@ public class GnomeMovement : MonoBehaviour
     IEnumerator Shoot()
     {
         yield return new WaitForSeconds(timeBetweenShots);
-        canShoot = false;
         GameObject newBullet = Instantiate(sticks, shootPos.position, Quaternion.identity);
-
         newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * speed, 0);
-        canShoot = true;
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
