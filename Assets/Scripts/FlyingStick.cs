@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class FlyingStick : MonoBehaviour
 {
     public float dieTime, damage;
 
@@ -14,20 +14,20 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GnomeMovement gnomeMovement = collision.gameObject.GetComponent<GnomeMovement>();
-
-        if (gnomeMovement != null)
+        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        if (enemy != null)
         {
-            gnomeMovement.TakeDamage(damage);
+            enemy.TakeDamage(damage);
             Die();
-        }       
+        }
+
     }
-    IEnumerator CountDownTimer() 
-    { 
+    IEnumerator CountDownTimer()
+    {
         yield return new WaitForSeconds(dieTime);
         Die();
     }
-    void Die() 
+    void Die()
     {
         Destroy(gameObject);
     }

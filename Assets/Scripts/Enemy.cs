@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     public Collider2D bodyCollider;
     public Transform player, shootPos;
     public GameObject bullet;
+    public EnergyBar energyBar;
+    public int maxEnergy = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class Enemy : MonoBehaviour
         patrol = true;
         rb2d = GetComponent<Rigidbody2D>();
         canShoot = true;
+        energyBar.SetMaxEnergy(maxEnergy);
     }
 
     // Update is called once per frame
@@ -87,5 +90,14 @@ public class Enemy : MonoBehaviour
         newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * walkSpeed * Time.fixedDeltaTime, 0);
         canShoot = true;
 
+    }
+    public void TakeDamage(float amount)
+    {
+        energyBar.slider.value -= amount;
+
+        if (energyBar.slider.value <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

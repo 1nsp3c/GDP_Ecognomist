@@ -12,8 +12,13 @@ public class GnomeMovement : MonoBehaviour
     public float speed = 10f;
     public float jumpHeight = 10f;
     public bool canDoubleJump;
+    
+    private bool canShoot;
+    public float timeBetweenShots, shootSpeed;
+    public GameObject sticks;
+    public Transform shootPos;
 
-    public int maxEnergy = 20;
+    public int maxEnergy = 30;
     public float seedEnergy = 6;
 
     public bool hasJumped;
@@ -166,6 +171,18 @@ public class GnomeMovement : MonoBehaviour
     public void PlayerAttack()
     {
         animator.SetTrigger("Attack");
+        StartCoroutine(Shoot());
+        
+    }
+    IEnumerator Shoot()
+    {
+        yield return new WaitForSeconds(timeBetweenShots);
+        canShoot = false;
+        GameObject newBullet = Instantiate(sticks, shootPos.position, Quaternion.identity);
+
+        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * speed, 0);
+        canShoot = true;
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -227,4 +244,5 @@ public class GnomeMovement : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    
 }
