@@ -216,4 +216,15 @@ public class GnomeMovement : MonoBehaviour
             }
         }
     }
+
+    public void TakeDamage(float amount) 
+    {
+        energyBar.slider.value -= amount;
+
+        if (energyBar.slider.value <= 0) 
+        {
+            loseScreen.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+    }
 }

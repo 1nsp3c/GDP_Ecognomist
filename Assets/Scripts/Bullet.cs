@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour
 {
     public float dieTime, damage;
     public GameObject dieEffect;
-    public EnergyBar energyBar;
 
     // Start is called before the first frame update
     void Start()
@@ -14,17 +13,12 @@ public class Bullet : MonoBehaviour
         StartCoroutine(CountDownTimer());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player") 
+        GnomeMovement gnomeMovement = collision.gameObject.GetComponent<GnomeMovement>();
+        if (gnomeMovement != null) 
         {
-            energyBar.slider.value -= 50;
+            gnomeMovement.TakeDamage(damage);
             Die();
         }
         
