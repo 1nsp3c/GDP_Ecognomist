@@ -20,7 +20,16 @@ public class Bullet : MonoBehaviour
         {
             gnomeMovement.TakeDamage(damage);
             Die();
-        }       
+        }
+
+        if (collision.gameObject.tag == "Walls") 
+        {
+            Die();
+        }
+        if (collision.gameObject.tag == "Collectables") 
+        {
+            Die();
+        }
     }
     IEnumerator CountDownTimer() 
     { 
