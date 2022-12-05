@@ -207,7 +207,7 @@ public class GnomeMovement : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             loseScreen.gameObject.SetActive(true);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
     private void plantTree()
