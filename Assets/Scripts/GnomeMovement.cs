@@ -104,6 +104,7 @@ public class GnomeMovement : MonoBehaviour
     public void Flip()
     {
         transform.Rotate(new Vector3(0, 180, 0));
+        shootSpeed *= -1;
         facingRight = !facingRight;
     }
     public void Jumping()

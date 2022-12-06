@@ -26,10 +26,15 @@ public class Bullet : MonoBehaviour
         {
             Die();
         }
-        if (collision.gameObject.tag == "Collectables") 
+        if (collision.gameObject.tag == "Collectables")
         {
             Die();
         }
+        if (collision.gameObject.tag == "Walls")
+        {
+            Die();
+        }
+
     }
     IEnumerator CountDownTimer() 
     { 
