@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         currentTime += 1 * Time.deltaTime;
-        timerText.text = currentTime.ToString("F2");
+        timerText.text = currentTime.ToString("F1");
     }
 
 
