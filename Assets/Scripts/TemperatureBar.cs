@@ -19,10 +19,6 @@ public class TemperatureBar : MonoBehaviour
     void Update()
     {
         FillSlider();
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            fillTime = 0f;
-        }
     }
     public void FillSlider()
     {
