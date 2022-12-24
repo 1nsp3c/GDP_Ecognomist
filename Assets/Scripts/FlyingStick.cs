@@ -10,8 +10,8 @@ public class FlyingStick : MonoBehaviour
     void Start()
     {
         StartCoroutine(CountDownTimer());
-    }
 
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
@@ -20,7 +20,10 @@ public class FlyingStick : MonoBehaviour
             enemy.TakeDamage(damage);
             Die();
         }
-
+        if (collision.gameObject.tag == "Walls") 
+        {
+            Die();
+        }
     }
     IEnumerator CountDownTimer()
     {
