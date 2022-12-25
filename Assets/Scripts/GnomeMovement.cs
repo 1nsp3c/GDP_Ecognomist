@@ -39,6 +39,7 @@ public class GnomeMovement : MonoBehaviour
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
     private TextMeshProUGUI textMeshSeed;
+    public int seedCount = 0;
 
     public Tree tree;
 
@@ -182,20 +183,26 @@ public class GnomeMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Collectables")  //tags with the name collectables
+        if (collectArray.Count < 1) //Limits the player to only be able to collect 1 seed at a time
         {
-            AddEnergy(10);
-            temperatureBar.ResetSlider();
-            Destroy(collision.gameObject);          //destroy collectable
-            //colButton.GetComponent<Collider>().isTrigger = true;  //collider on tirgger is enabled
+            if (collision.gameObject.tag == "Collectables")  //tags with the name collectables
+            {
+                AddEnergy(10);
+                temperatureBar.ResetSlider();
+                seedCount += 1;
+                Destroy(collision.gameObject); //destroy collectable
 
-            collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
+                collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
+            }
         }
+        
         if (collision.gameObject.tag == "Tree")
         {
             plantTree();
-            if (collectArray.Count == 5)
-            { 
+            collectArray.Clear(); //Removes all elements from the arraylist
+            if (seedCount == 5)
+            {
+                Time.timeScale = 0;
                 WinScreen.gameObject.SetActive(true);
                 rb.gameObject.SetActive(false);
             }
@@ -208,8 +215,6 @@ public class GnomeMovement : MonoBehaviour
     }
     private void plantTree()
     {
-        int seedCount = collectArray.Count;
-
         for (int i = 0; i < seedCount; i++)
         {
             tree.treeList[i].SetActive(true);
