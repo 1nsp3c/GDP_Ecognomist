@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public GameObject bullet;
     public EnergyBar energyBar;
     public int maxEnergy = 30;
+    public GameObject tree;
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +99,8 @@ public class Enemy : MonoBehaviour
         if (energyBar.slider.value <= 0)
         {
             gameObject.SetActive(false);
+            tree.SetActive(true);
+            tree.transform.position = gameObject.transform.position;
         }
     }
 }
