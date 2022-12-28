@@ -35,6 +35,7 @@ public class GnomeMovement : MonoBehaviour
     public TemperatureBar temperatureBar;
     public GameObject WinScreen;
     public GameObject loseScreen;
+    private Enemy enemy;
 
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
@@ -42,6 +43,7 @@ public class GnomeMovement : MonoBehaviour
     public int seedCount = 0;
 
     public Tree tree;
+    public Tree tree1;
 
     public float damageCooldown;
     [HideInInspector] public float damageTimer;
@@ -73,6 +75,8 @@ public class GnomeMovement : MonoBehaviour
         moveRight = false;
         textMeshSeed = seedText.GetComponent<TextMeshProUGUI>();
         WinScreen.gameObject.SetActive(false);
+
+        enemy = GetComponent<Enemy>();
         
     }
 
@@ -195,8 +199,8 @@ public class GnomeMovement : MonoBehaviour
                 collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
             }
         }
-        
-        if (collision.gameObject.tag == "Tree")
+
+        if (collision.gameObject.name == "Tree")
         {
             plantTree();
             collectArray.Clear(); //Removes all elements from the arraylist
@@ -207,6 +211,16 @@ public class GnomeMovement : MonoBehaviour
                 rb.gameObject.SetActive(false);
             }
         }
+
+        else if (collision.gameObject.name == "Tree (1)") 
+        {
+            for (int i = 0; i < seedCount; i++)
+            {
+                tree1.treeList[i].SetActive(true);
+            }
+        }
+
+
         if (collision.gameObject.layer == 6)
         {
             loseScreen.gameObject.SetActive(true);
