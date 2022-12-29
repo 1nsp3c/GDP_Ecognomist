@@ -212,10 +212,6 @@ public class GnomeMovement : MonoBehaviour
             collectArray.Clear(); //Removes all elements from the arraylist
             tree.animator.SetTrigger("ASD");
             temperatureBar.fillTime /= 3f;
-            temperatureBar.slider.value = Mathf.Lerp(temperatureBar.slider.minValue, temperatureBar.slider.maxValue, temperatureBar.fillTime);
-
-            temperatureBar.fillTime += 0f * Time.deltaTime;
-            temperatureBar.fill.color = temperatureBar.tempGradient.Evaluate(temperatureBar.slider.normalizedValue);
             if (seedCount == 5)
             {
                 Time.timeScale = 0;
