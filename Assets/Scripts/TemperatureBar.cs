@@ -26,7 +26,7 @@ public class TemperatureBar : MonoBehaviour
     {
         slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, fillTime);
 
-        fillTime += 0.08f * Time.deltaTime;
+        fillTime += 0.06f * Time.deltaTime;
         fill.color = tempGradient.Evaluate(slider.normalizedValue);
     }
 

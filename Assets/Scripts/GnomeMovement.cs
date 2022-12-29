@@ -199,7 +199,7 @@ public class GnomeMovement : MonoBehaviour
             if (collision.gameObject.tag == "Collectables")  //tags with the name collectables
             {
                 AddEnergy(10);
-                temperatureBar.ResetSlider();
+                //temperatureBar.ResetSlider();
                 seedCount += 1;
                 Destroy(collision.gameObject); //destroy collectable
 
@@ -211,7 +211,7 @@ public class GnomeMovement : MonoBehaviour
         {
             collectArray.Clear(); //Removes all elements from the arraylist
             tree.animator.SetTrigger("ASD");
-            temperatureBar.fillTime -= 1f * Time.deltaTime;
+            temperatureBar.fillTime /= 3f;
             if (seedCount == 5)
             {
                 Time.timeScale = 0;
