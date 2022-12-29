@@ -211,6 +211,7 @@ public class GnomeMovement : MonoBehaviour
         {
             collectArray.Clear(); //Removes all elements from the arraylist
             tree.animator.SetTrigger("ASD");
+            temperatureBar.fillTime -= 1f * Time.deltaTime;
             if (seedCount == 5)
             {
                 Time.timeScale = 0;
