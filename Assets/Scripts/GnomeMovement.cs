@@ -89,6 +89,11 @@ public class GnomeMovement : MonoBehaviour
         CheckMaxTemp();
         Jumping();
         MovePlayer();
+        if (energyBar.slider.value <= 0)
+        {
+            loseScreen.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
         if (!facingRight && moveRight)
         {
             Flip();
