@@ -209,23 +209,19 @@ public class GnomeMovement : MonoBehaviour
 
         if (collision.gameObject.name == "Tree")
         {
-            plantTree();
             collectArray.Clear(); //Removes all elements from the arraylist
+            tree.animator.SetTrigger("ASD");
             if (seedCount == 5)
             {
                 Time.timeScale = 0;
                 WinScreen.gameObject.SetActive(true);
                 rb.gameObject.SetActive(false);
-                tree.animator.SetTrigger("ASD");
             }
         }
 
         else if (collision.gameObject.name == "Tree (1)") 
         {
-            for (int i = 0; i < seedCount; i++)
-            {
-                tree1.treeList[i].SetActive(true);
-            }
+            collectArray.Clear();
             tree1.animator.SetTrigger("ASD");
         }
 
