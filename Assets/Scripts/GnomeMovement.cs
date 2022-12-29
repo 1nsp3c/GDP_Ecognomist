@@ -216,7 +216,7 @@ public class GnomeMovement : MonoBehaviour
                 Time.timeScale = 0;
                 WinScreen.gameObject.SetActive(true);
                 rb.gameObject.SetActive(false);
-                animator.SetBool("ASD", true);
+                tree.animator.SetTrigger("ASD");
             }
         }
 
@@ -226,7 +226,7 @@ public class GnomeMovement : MonoBehaviour
             {
                 tree1.treeList[i].SetActive(true);
             }
-            animator.SetBool("ASD", true);
+            tree1.animator.SetTrigger("ASD");
         }
 
 
