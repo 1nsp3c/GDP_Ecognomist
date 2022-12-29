@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class GnomeMovement : MonoBehaviour
@@ -19,6 +18,8 @@ public class GnomeMovement : MonoBehaviour
 
     public int maxEnergy = 30;
     public float seedEnergy = 6;
+    public Slider slider;
+    public Gradient energyGradient;
 
     public bool hasJumped;
     public bool facingRight = true;
@@ -28,6 +29,7 @@ public class GnomeMovement : MonoBehaviour
     public EnergyBar energyBar;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public Image fill;
 
     private bool moveLeft;
     private bool moveRight;
@@ -252,6 +254,7 @@ public class GnomeMovement : MonoBehaviour
     public void TakeDamage(float amount) 
     {
         energyBar.slider.value -= amount;
+        fill.color = energyGradient.Evaluate(slider.normalizedValue);
 
         if (energyBar.slider.value <= 0) 
         {

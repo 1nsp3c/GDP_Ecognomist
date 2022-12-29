@@ -7,6 +7,8 @@ public class TemperatureBar : MonoBehaviour
 {
     public Slider slider;
     public float fillTime = 0f;
+    public Gradient tempGradient;
+    public Image fill;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class TemperatureBar : MonoBehaviour
         slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, fillTime);
 
         fillTime += 0.15f * Time.deltaTime;
+        fill.color = tempGradient.Evaluate(slider.normalizedValue);
     }
 
     public void ResetSlider()
