@@ -130,29 +130,77 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2056630740846421352, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 07845b0da23327c49b7315192d52ebd0, type: 3}
+    - target: {fileID: 2056630741069463856, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7caa4e9d55e59404a9037442d9f4730c, type: 3}
+    - target: {fileID: 2056630741301461996, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd44a4637aa26a0478d9179bf6ce0c17, type: 3}
+    - target: {fileID: 2056630741466376068, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 902faad8782464c4f81611fb2ba74493, type: 3}
+    - target: {fileID: 2056630742042812531, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5aafc08b740ae74fb33a160ebbd8a2c, type: 3}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.8135524
+      value: 0.32515794
       objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.423721
+      value: 0.36637527
       objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.423721
+      value: 0.36637527
       objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.481603
+      value: 3.35
       objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.458816
+      value: -6.47
       objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8199,7 +8247,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.5, y: 0.56}
+  m_Size: {x: 16, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

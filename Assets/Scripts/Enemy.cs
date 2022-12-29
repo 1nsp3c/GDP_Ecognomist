@@ -108,6 +108,11 @@ public class Enemy : MonoBehaviour
             gameObject.SetActive(false);
             tree1.gameObject.SetActive(true);
             tree1.transform.position = gameObject.transform.position;
+
+            float posX = gameObject.transform.position.x;
+            float posY = gameObject.transform.position.y + 100f;
+
+            tree1.transform.position = new Vector2(posX, posY);
         }
     }
 }
