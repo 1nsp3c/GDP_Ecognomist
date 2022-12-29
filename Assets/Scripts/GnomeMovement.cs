@@ -232,13 +232,6 @@ public class GnomeMovement : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    private void plantTree()
-    {
-        for (int i = 0; i < seedCount; i++)
-        {
-            tree.treeList[i].SetActive(true);
-        }
-    }
     void CheckMaxTemp()
     {
         if (temperatureBar.slider.value == temperatureBar.slider.maxValue)
@@ -248,7 +241,6 @@ public class GnomeMovement : MonoBehaviour
             if (damageTimer <= 0)
             {
                 energyBar.slider.value -= 1;
-
                 damageTimer = damageCooldown;
             }
         }
