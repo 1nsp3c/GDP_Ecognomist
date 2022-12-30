@@ -207,7 +207,7 @@ public class GnomeMovement : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.name == "Tree")
+        if (collision.gameObject.name == "Tree" && collectArray.Count == 1)
         {
             collectArray.Clear(); //Removes all elements from the arraylist
             tree.animator.SetTrigger("ASD");
@@ -217,13 +217,15 @@ public class GnomeMovement : MonoBehaviour
                 Time.timeScale = 0;
                 WinScreen.gameObject.SetActive(true);
                 rb.gameObject.SetActive(false);
+                tree.enabled = false;
             }
         }
 
-        else if (collision.gameObject.name == "Tree (1)") 
+        else if (collision.gameObject.name == "Tree (1)" && collectArray.Count == 1) 
         {
             collectArray.Clear();
             tree1.animator.SetTrigger("ASD");
+            tree1.enabled = false;
         }
 
 

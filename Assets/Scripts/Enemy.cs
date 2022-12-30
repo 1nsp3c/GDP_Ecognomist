@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
             float posX = gameObject.transform.position.x;
             float posY = gameObject.transform.position.y;
 
-            tree1.transform.position = new Vector2(posX, posY);
+            tree1.transform.position = new Vector2(posX, posY + 1);
         }
     }
 }
