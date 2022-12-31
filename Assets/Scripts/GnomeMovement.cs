@@ -48,7 +48,14 @@ public class GnomeMovement : MonoBehaviour
 
     public Tree tree;
     public Tree tree1;
+    public Tree tree2;
+    public Tree tree3;
+    public Tree tree4;
     public TextMeshProUGUI textMeshText;
+    public TextMeshProUGUI textMeshText1;
+    public TextMeshProUGUI textMeshText2;
+    public TextMeshProUGUI textMeshText3;
+    public TextMeshProUGUI textMeshText4;
 
     public float damageCooldown;
     [HideInInspector] public float damageTimer;
@@ -212,7 +219,7 @@ public class GnomeMovement : MonoBehaviour
             }
         }
 
-        
+
 
         if (collision.gameObject.name == "Tree" && collectArray.Count == 1)
         {
@@ -220,20 +227,46 @@ public class GnomeMovement : MonoBehaviour
             tree.animator.SetTrigger("ASD");
             temperatureBar.fillTime /= 3f;
             tree.boxCollider2D.enabled = false;
-            
+
             textMeshText.gameObject.SetActive(false);
             seedCounts += 1;
         }
 
-        else if (collision.gameObject.name == "Tree (1)" && collectArray.Count == 1) 
+        else if (collision.gameObject.name == "Tree (1)" && collectArray.Count == 1)
         {
             collectArray.Clear();
             tree1.animator.SetTrigger("ASD");
             tree1.boxCollider2D.enabled = false;
+            textMeshText1.gameObject.SetActive(false);
+            seedCounts += 1;
+        }
+        else if (collision.gameObject.name == "Tree (2)" && collectArray.Count == 1)
+        {
+            collectArray.Clear();
+            tree2.animator.SetTrigger("ASD");
+            tree2.boxCollider2D.enabled = false;
+            textMeshText2.gameObject.SetActive(false);
+            seedCounts += 1;
+        }
+        else if (collision.gameObject.name == "Tree (3)" && collectArray.Count == 1)
+        {
+            collectArray.Clear();
+            tree3.animator.SetTrigger("ASD");
+            tree3.boxCollider2D.enabled = false;
+            textMeshText3.gameObject.SetActive(false);
+            seedCounts += 1;
+        }
+        else if (collision.gameObject.name == "Tree (4)" && collectArray.Count == 1)
+        {
+            collectArray.Clear();
+            tree4.animator.SetTrigger("ASD");
+            tree4.boxCollider2D.enabled = false;
+            textMeshText4.gameObject.SetActive(false);
             seedCounts += 1;
         }
 
-        if (seedCounts == 2)
+
+        if (seedCounts == 5)
         {
             Time.timeScale = 0;
             WinScreen.gameObject.SetActive(true);

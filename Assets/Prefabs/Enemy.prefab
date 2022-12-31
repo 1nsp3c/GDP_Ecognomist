@@ -241,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 43496012790852811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -22.19, y: 3.32, z: 0}
-  m_LocalScale: {x: 0.3306619, y: 0.3306619, z: 0.3306619}
+  m_LocalScale: {x: 0.3306619, y: 0.33066192, z: 0.33066192}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 43496012881074011}
@@ -326,13 +326,19 @@ MonoBehaviour:
   bodyCollider: {fileID: 43496012790852813}
   player: {fileID: 0}
   shootPos: {fileID: 43496013250006552}
-  bullet: {fileID: 6779153949229795354, guid: 7f86350b90635114cb7a103ef51e2db9, type: 3}
+  bullet: {fileID: 3629426211279432182, guid: b6d5a36de7cf6b041ac2cf0c501f76b4, type: 3}
   energyBar: {fileID: 43496012479264162}
   maxEnergy: 30
   tree: {fileID: 0}
   tree1: {fileID: 0}
+  tree2: {fileID: 0}
+  tree3: {fileID: 0}
+  tree4: {fileID: 0}
   textMeshText: {fileID: 0}
-  enemyText: {fileID: 0}
+  textMeshText1: {fileID: 0}
+  textMeshText2: {fileID: 0}
+  textMeshText3: {fileID: 0}
+  textMeshText4: {fileID: 0}
 --- !u!50 &43496012790852809
 Rigidbody2D:
   serializedVersion: 4
@@ -367,7 +373,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.9649372, y: -5.1700106}
+  m_Offset: {x: 0.5176859, y: -4.4068966}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -378,7 +384,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.574991, y: 1.27454}
+  m_Size: {x: 10.35401, y: 2.8007684}
   m_EdgeRadius: 0
 --- !u!61 &43496012790852813
 BoxCollider2D:
@@ -393,7 +399,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.9745606, y: 0.09136534}
+  m_Offset: {x: 0.5166917, y: 0.78906965}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -404,7 +410,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.506317, y: 8.771779}
+  m_Size: {x: 10.422055, y: 7.3763704}
   m_EdgeRadius: 0
 --- !u!95 &43496012790852802
 Animator:
@@ -481,7 +487,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43496013250006555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: -0.2, z: 0}
+  m_LocalPosition: {x: 10.2, y: -0.2, z: 0}
   m_LocalScale: {x: 1.2184954, y: 1.2184954, z: 1.2184954}
   m_ConstrainProportionsScale: 0
   m_Children: []
