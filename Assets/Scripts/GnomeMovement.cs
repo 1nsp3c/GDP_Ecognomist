@@ -13,6 +13,8 @@ public class GnomeMovement : MonoBehaviour
     public bool canDoubleJump;
 
     public float timeBetweenShots, shootSpeed;
+    public float fireRate;
+    float nextFire;
     public GameObject sticks;
     public Transform shootPos;
 
@@ -183,15 +185,18 @@ public class GnomeMovement : MonoBehaviour
     }
     public void PlayerAttack()
     {
-        animator.SetTrigger("Attack");
         StartCoroutine(Shoot());
-        
     }
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(timeBetweenShots);
-        GameObject newBullet = Instantiate(sticks, shootPos.position, Quaternion.identity);
-        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * speed, 0);
+        if (Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            animator.SetTrigger("Attack");
+            yield return new WaitForSeconds(timeBetweenShots);
+            GameObject newBullet = Instantiate(sticks, shootPos.position, Quaternion.identity);
+            newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * speed, 0);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
