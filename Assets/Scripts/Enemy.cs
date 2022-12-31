@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public Tree tree;
     public Tree tree1;
     public TextMeshProUGUI textMeshText;
+    public TextMeshProUGUI enemyText;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        EnemyName();
         if (patrol) 
         {
             Patrol();
@@ -82,7 +84,7 @@ public class Enemy : MonoBehaviour
         patrol = false;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
-        patrol = true; 
+        patrol = true;
     }
 
     IEnumerator Shoot() 
@@ -124,5 +126,9 @@ public class Enemy : MonoBehaviour
 
             tree1.transform.position = new Vector2(posX, posY + 1);
         }
+    }
+    public void EnemyName()
+    {
+        enemyText.gameObject.transform.position = gameObject.transform.position;
     }
 }

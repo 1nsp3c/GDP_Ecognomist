@@ -329,6 +329,10 @@ MonoBehaviour:
   bullet: {fileID: 6779153949229795354, guid: 7f86350b90635114cb7a103ef51e2db9, type: 3}
   energyBar: {fileID: 43496012479264162}
   maxEnergy: 30
+  tree: {fileID: 0}
+  tree1: {fileID: 0}
+  textMeshText: {fileID: 0}
+  enemyText: {fileID: 0}
 --- !u!50 &43496012790852809
 Rigidbody2D:
   serializedVersion: 4
