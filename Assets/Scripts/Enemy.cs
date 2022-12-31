@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
     public int maxEnergy = 30;
     public Tree tree;
     public Tree tree1;
+    public TextMeshProUGUI textMeshText;
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +109,9 @@ public class Enemy : MonoBehaviour
             float posY = gameObject.transform.position.y;
 
             tree.transform.position = new Vector2(posX, posY + 1);
+
+            textMeshText.gameObject.transform.position = new Vector2(tree.transform.position.x + 1, tree.transform.position.y);
+            textMeshText.gameObject.SetActive(true);
         }
         else if (energyBar.slider.value <= 0 && gameObject.name == "Enemy (1)") 
         {

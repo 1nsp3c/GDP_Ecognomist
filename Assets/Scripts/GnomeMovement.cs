@@ -46,6 +46,7 @@ public class GnomeMovement : MonoBehaviour
 
     public Tree tree;
     public Tree tree1;
+    public TextMeshProUGUI textMeshText;
 
     public float damageCooldown;
     [HideInInspector] public float damageTimer;
@@ -217,15 +218,18 @@ public class GnomeMovement : MonoBehaviour
                 Time.timeScale = 0;
                 WinScreen.gameObject.SetActive(true);
                 rb.gameObject.SetActive(false);
-                tree.enabled = false;
+                tree.boxCollider2D.enabled = false;
             }
+            tree.boxCollider2D.enabled = false;
+            
+            textMeshText.gameObject.SetActive(false);
         }
 
         else if (collision.gameObject.name == "Tree (1)" && collectArray.Count == 1) 
         {
             collectArray.Clear();
             tree1.animator.SetTrigger("ASD");
-            tree1.enabled = false;
+            tree1.boxCollider2D.enabled = false;
         }
 
 
@@ -258,6 +262,7 @@ public class GnomeMovement : MonoBehaviour
         {
             loseScreen.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            
         }
     }
     
