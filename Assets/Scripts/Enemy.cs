@@ -83,6 +83,7 @@ public class Enemy : MonoBehaviour
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
         patrol = true; 
+        bullet.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
 
     IEnumerator Shoot() 
