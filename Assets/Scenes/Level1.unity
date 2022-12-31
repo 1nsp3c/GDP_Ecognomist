@@ -4189,7 +4189,7 @@ MonoBehaviour:
   WinScreen: {fileID: 806128345}
   loseScreen: {fileID: 351246198}
   seedText: {fileID: 816496872}
-  seedCount: 0
+  seedCounts: 0
   tree: {fileID: 1293018014}
   tree1: {fileID: 308339749}
   textMeshText: {fileID: 1219934248}

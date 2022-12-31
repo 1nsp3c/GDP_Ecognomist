@@ -42,7 +42,7 @@ public class GnomeMovement : MonoBehaviour
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
     private TextMeshProUGUI textMeshSeed;
-    public int seedCount = 0;
+    public int seedCounts = 0;
 
     public Tree tree;
     public Tree tree1;
@@ -201,28 +201,23 @@ public class GnomeMovement : MonoBehaviour
             {
                 AddEnergy(10);
                 //temperatureBar.ResetSlider();
-                seedCount += 1;
                 Destroy(collision.gameObject); //destroy collectable
 
                 collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
             }
         }
 
+        
+
         if (collision.gameObject.name == "Tree" && collectArray.Count == 1)
         {
             collectArray.Clear(); //Removes all elements from the arraylist
             tree.animator.SetTrigger("ASD");
             temperatureBar.fillTime /= 3f;
-            if (seedCount == 5)
-            {
-                Time.timeScale = 0;
-                WinScreen.gameObject.SetActive(true);
-                rb.gameObject.SetActive(false);
-                tree.boxCollider2D.enabled = false;
-            }
             tree.boxCollider2D.enabled = false;
             
             textMeshText.gameObject.SetActive(false);
+            seedCounts += 1;
         }
 
         else if (collision.gameObject.name == "Tree (1)" && collectArray.Count == 1) 
@@ -230,8 +225,16 @@ public class GnomeMovement : MonoBehaviour
             collectArray.Clear();
             tree1.animator.SetTrigger("ASD");
             tree1.boxCollider2D.enabled = false;
+            seedCounts += 1;
         }
 
+        if (seedCounts == 2)
+        {
+            Time.timeScale = 0;
+            WinScreen.gameObject.SetActive(true);
+            rb.gameObject.SetActive(false);
+
+        }
 
         if (collision.gameObject.layer == 6)
         {
