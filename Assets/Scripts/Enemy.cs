@@ -19,8 +19,15 @@ public class Enemy : MonoBehaviour
     public int maxEnergy = 30;
     public Tree tree;
     public Tree tree1;
+    public Tree tree2;
+    public Tree tree3;
+    public Tree tree4;
+    
     public TextMeshProUGUI textMeshText;
-    public TextMeshProUGUI enemyText;
+    public TextMeshProUGUI textMeshText1;
+    public TextMeshProUGUI textMeshText2;
+    public TextMeshProUGUI textMeshText3;
+    public TextMeshProUGUI textMeshText4;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +41,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        EnemyName();
         if (patrol) 
         {
             Patrol();
@@ -84,7 +90,8 @@ public class Enemy : MonoBehaviour
         patrol = false;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         walkSpeed *= -1;
-        patrol = true;
+        patrol = true; 
+        bullet.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
 
     IEnumerator Shoot() 
@@ -125,10 +132,52 @@ public class Enemy : MonoBehaviour
             float posY = gameObject.transform.position.y;
 
             tree1.transform.position = new Vector2(posX, posY + 1);
+
+            textMeshText1.gameObject.transform.position = new Vector2(tree1.transform.position.x + 1, tree1.transform.position.y);
+            textMeshText1.gameObject.SetActive(true);
         }
-    }
-    public void EnemyName()
-    {
-        enemyText.gameObject.transform.position = gameObject.transform.position;
+
+        else if (energyBar.slider.value <= 0 && gameObject.name == "Enemy (2)")
+        {
+            gameObject.SetActive(false);
+            tree2.gameObject.SetActive(true);
+            tree2.transform.position = gameObject.transform.position;
+
+            float posX = gameObject.transform.position.x;
+            float posY = gameObject.transform.position.y;
+
+            tree2.transform.position = new Vector2(posX, posY + 1);
+
+            textMeshText2.transform.position = new Vector2(tree2.transform.position.x, tree2.transform.position.y);
+            textMeshText2.gameObject.SetActive(true);
+        }
+        else if (energyBar.slider.value <= 0 && gameObject.name == "Enemy (3)")
+        {
+            gameObject.SetActive(false);
+            tree3.gameObject.SetActive(true);
+            tree3.transform.position = gameObject.transform.position;
+
+            float posX = gameObject.transform.position.x;
+            float posY = gameObject.transform.position.y;
+
+            tree3.transform.position = new Vector2(posX, posY + 1);
+
+            textMeshText3.gameObject.transform.position = new Vector2(tree3.transform.position.x + 1, tree3.transform.position.y);
+            textMeshText3.gameObject.SetActive(true);
+        }
+        else if (energyBar.slider.value <= 0 && gameObject.name == "Enemy (4)")
+        {
+            gameObject.SetActive(false);
+            tree4.gameObject.SetActive(true);
+            tree4.transform.position = gameObject.transform.position;
+
+            float posX = gameObject.transform.position.x;
+            float posY = gameObject.transform.position.y;
+
+            tree4.transform.position = new Vector2(posX, posY + 1);
+
+            textMeshText4.gameObject.transform.position = new Vector2(tree4.transform.position.x + 1, tree4.transform.position.y);
+            textMeshText4.gameObject.SetActive(true);
+        }
     }
 }
