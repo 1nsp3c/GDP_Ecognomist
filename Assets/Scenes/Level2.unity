@@ -300,9 +300,9 @@ GameObject:
   - component: {fileID: 169704005}
   - component: {fileID: 169704004}
   - component: {fileID: 169704003}
-  - component: {fileID: 169704002}
   - component: {fileID: 169704001}
   - component: {fileID: 169704000}
+  - component: {fileID: 169704006}
   m_Layer: 0
   m_Name: gnome1
   m_TagString: Player
@@ -356,85 +356,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.223583, y: 10.518724}
   m_EdgeRadius: 0
---- !u!114 &169704002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169703999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ec8334d797ea444a970116935174352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jumpHeight: 16
-  canDoubleJump: 0
-  timeBetweenShots: 0.5
-  shootSpeed: 5
-  fireRate: 1
-  sticks: {fileID: 5786834492126358319, guid: bcac419ffdab69243bc40c02cb18f2d1, type: 3}
-  shootPos: {fileID: 1381235222}
-  maxEnergy: 30
-  seedEnergy: 1
-  slider: {fileID: 2112230894}
-  energyGradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 0.05059731, g: 1, b: 0, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  hasJumped: 0
-  facingRight: 1
-  isRunning: 0
-  animator: {fileID: 169704000}
-  energyBar: {fileID: 2112230893}
-  groundCheck: {fileID: 168202935}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  fill: {fileID: 879263727}
-  temperatureBar: {fileID: 0}
-  WinScreen: {fileID: 0}
-  loseScreen: {fileID: 0}
-  seedText: {fileID: 0}
-  seedCounts: 0
-  tree: {fileID: 0}
-  tree1: {fileID: 0}
-  tree2: {fileID: 0}
-  tree3: {fileID: 0}
-  tree4: {fileID: 0}
-  textMeshText: {fileID: 0}
-  textMeshText1: {fileID: 0}
-  textMeshText2: {fileID: 0}
-  textMeshText3: {fileID: 0}
-  textMeshText4: {fileID: 0}
-  damageCooldown: 1
-  damageTimer: 0
 --- !u!50 &169704003
 Rigidbody2D:
   serializedVersion: 4
@@ -526,6 +447,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169704006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169703999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d5ffa344145264d9ead4e788dc3f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &247051927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde8523efb761fa40af351078af6b49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 739105091}
 --- !u!114 &376032410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2101,6 +2034,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8310659153430707065, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 739105091}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
 --- !u!1 &716756327
@@ -3619,7 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde8523efb761fa40af351078af6b49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 739105091}
 --- !u!114 &1077760069
 MonoBehaviour:
   m_ObjectHideFlags: 0
