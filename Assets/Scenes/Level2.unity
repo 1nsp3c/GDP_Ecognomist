@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42521344f30b11141a357c7f3230f838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1876633871}
+  enemyPrefab: {fileID: 26445746}
   spawner: {fileID: 1703706865}
 --- !u!4 &1703706867
 Transform:
@@ -2100,11 +2100,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1876633871 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 43496012790852811, guid: f6cef148d70b41642bebc2b537188b43, type: 3}
-  m_PrefabInstance: {fileID: 662674386}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2112230891
 GameObject:
   m_ObjectHideFlags: 0
