@@ -8,12 +8,18 @@ public class EnemySecondLevel : MonoBehaviour
     private float walkSpeed = 10;
     public Transform tree;
     private Rigidbody2D rb2d;
-    public bool patrol;
+    private bool patrol;
+    private bool canShoot;
+    public float timeBetweenShots, shootSpeed;
+    public GameObject bullet;
+    public Transform shootPos;
+
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         patrol = true;
+        canShoot = true;
     }
 
     // Update is called once per frame
@@ -31,8 +37,11 @@ public class EnemySecondLevel : MonoBehaviour
             patrol = false;
             rb2d.velocity = Vector2.zero;
 
-            //if (canShoot)
-            //StartCoroutine(Shoot());
+            if (canShoot) 
+            {
+                StartCoroutine(Shoot());
+            }
+                
         }
         else 
         {
@@ -42,5 +51,16 @@ public class EnemySecondLevel : MonoBehaviour
     void Patrol()
     {
         rb2d.velocity = new Vector2(walkSpeed, rb2d.velocity.y);
+    }
+
+    IEnumerator Shoot()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(timeBetweenShots);
+        GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
+
+        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * walkSpeed * Time.fixedDeltaTime, 0);
+        canShoot = true;
+
     }
 }
