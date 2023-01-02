@@ -10,7 +10,7 @@ public class Level2Gnome : MonoBehaviour
     Rigidbody2D rb1;
     public float speed1 = 10f;
     public float jumpHeight1 = 10f;
-    public bool canDoubleJump1;
+    bool canDoubleJump1;
 
     public float timeBetweenShots1, shootSpeed1;
     public float fireRate1;
@@ -19,15 +19,14 @@ public class Level2Gnome : MonoBehaviour
     public Transform shootPos1;
 
     public int maxEnergy1 = 30;
-    public float seedEnergy = 6;
 
     public Slider slider;
 
     public Gradient energyGradient1;
 
-    public bool hasJumped1;
-    public bool facingRight1 = true;
-    public bool isRunning = false;
+    bool hasJumped1;
+    bool facingRight1 = true;
+    bool isRunning = false;
     public Animator animator1;
 
     public EnergyBar energyBar1;
