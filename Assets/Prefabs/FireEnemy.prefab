@@ -227,11 +227,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 20
-  tree: {fileID: 0}
   timeBetweenShots: 2
   shootSpeed: 20
   bullet: {fileID: 8060373695140410600, guid: e366187bbe9742e4fb107a1966933992, type: 3}
   shootPos: {fileID: 8310659152263357860}
+  tree: {fileID: 0}
 --- !u!95 &8310659151908741790
 Animator:
   serializedVersion: 4

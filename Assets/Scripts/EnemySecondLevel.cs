@@ -6,13 +6,14 @@ public class EnemySecondLevel : MonoBehaviour
 {
     public float range;
     private float walkSpeed = 10;
-    public GameObject tree;
+    //public GameObject tree;
     private Rigidbody2D rb2d;
     private bool patrol;
     private bool canShoot;
     public float timeBetweenShots, shootSpeed;
     public GameObject bullet;
     public Transform shootPos;
+    public Tree tree;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,7 @@ public class EnemySecondLevel : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         patrol = true;
         canShoot = true;
-
-        //tree = FindObjectOfType<>();
+        tree = FindObjectOfType<Tree>();
     }
 
     // Update is called once per frame
