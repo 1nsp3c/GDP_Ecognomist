@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
 
-public class GnomeMovement : MonoBehaviour
+public class Level2Gnome : MonoBehaviour
 {
     Rigidbody2D rb1;
     public float speed1 = 10f;
@@ -20,11 +20,9 @@ public class GnomeMovement : MonoBehaviour
 
     public int maxEnergy1 = 30;
     public float seedEnergy = 6;
-<<<<<<< HEAD
+
     public Slider slider;
-=======
-    public Slider slider1;
->>>>>>> parent of 08eeb7f (fixed gnome2 script)
+
     public Gradient energyGradient1;
 
     public bool hasJumped1;
@@ -44,12 +42,6 @@ public class GnomeMovement : MonoBehaviour
     public GameObject WinScreen1;
     public GameObject loseScreen1;
     private Enemy enemy1;
-
-    //public Collider2D colButton;  //collider at the end of a level
-    public GameObject seedText1;
-    private TextMeshProUGUI textMeshSeed1;
-    public int seedCounts1 = 0;
-
 
     public float damageCooldown1;
     [HideInInspector] public float damageTimer1;
@@ -79,7 +71,6 @@ public class GnomeMovement : MonoBehaviour
         rb1 = GetComponent<Rigidbody2D>();
         moveLeft1 = false;
         moveRight1 = false;
-        textMeshSeed1 = seedText1.GetComponent<TextMeshProUGUI>();
         WinScreen1.gameObject.SetActive(false);
 
         enemy1 = GetComponent<Enemy>();
@@ -93,7 +84,7 @@ public class GnomeMovement : MonoBehaviour
         CheckMaxTemp1();
         Jumping1();
         MovePlayer1();
-        if (energyBar1.slider1.value <= 0)
+        if (energyBar1.slider.value <= 0)
         {
             loseScreen1.gameObject.SetActive(true);
             gameObject.SetActive(false);
@@ -107,7 +98,6 @@ public class GnomeMovement : MonoBehaviour
             Flip1();
         }
 
-        textMeshSeed1.text = "X : " + collectArray1.Count;
         rb1.velocity = new Vector2(horizontalMove1, rb1.velocity.y);
 
         animator1.SetFloat("PosX", Mathf.Abs(rb1.velocity.x * 10f));
@@ -162,8 +152,8 @@ public class GnomeMovement : MonoBehaviour
     }
     public void AddEnergy1(float energy)
     {
-        energyBar1.slider1.value += energy;
-        energyBar1.SetEnergy(energyBar1.slider1.value);
+        energyBar1.slider.value += energy;
+        energyBar1.SetEnergy(energyBar1.slider.value);
     }
 
     void MovePlayer1()
@@ -205,13 +195,13 @@ public class GnomeMovement : MonoBehaviour
     //}
     void CheckMaxTemp1()
     {
-        if (temperatureBar1.slider1.value == temperatureBar1.slider1.maxValue)
+        if (temperatureBar1.slider.value == temperatureBar1.slider.maxValue)
         {
             damageTimer1 -= Time.deltaTime;
 
             if (damageTimer1 <= 0)
             {
-                energyBar1.slider1.value -= 1;
+                energyBar1.slider.value -= 1;
                 damageTimer1 = damageCooldown1;
             }
         }
@@ -219,10 +209,10 @@ public class GnomeMovement : MonoBehaviour
 
     public void TakeDamage1(float amount)
     {
-        energyBar1.slider1.value -= amount;
-        fill1.color = energyGradient1.Evaluate(slider1.normalizedValue);
+        energyBar1.slider.value -= amount;
+        fill1.color = energyGradient1.Evaluate(slider.normalizedValue);
 
-        if (energyBar1.slider1.value <= 0)
+        if (energyBar1.slider.value <= 0)
         {
             loseScreen1.gameObject.SetActive(true);
             gameObject.SetActive(false);
