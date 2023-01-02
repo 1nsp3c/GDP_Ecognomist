@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
 
-public class GnomeMovement : MonoBehaviour
+public class Level2Gnome : MonoBehaviour
 {
     Rigidbody2D rb1;
     public float speed1 = 10f;
@@ -20,7 +20,7 @@ public class GnomeMovement : MonoBehaviour
 
     public int maxEnergy1 = 30;
     public float seedEnergy = 6;
-    public Slider slider1;
+    public Slider slider;
     public Gradient energyGradient1;
 
     public bool hasJumped1;
@@ -89,7 +89,7 @@ public class GnomeMovement : MonoBehaviour
         CheckMaxTemp1();
         Jumping1();
         MovePlayer1();
-        if (energyBar1.slider1.value <= 0)
+        if (energyBar1.slider.value <= 0)
         {
             loseScreen1.gameObject.SetActive(true);
             gameObject.SetActive(false);
@@ -158,8 +158,8 @@ public class GnomeMovement : MonoBehaviour
     }
     public void AddEnergy1(float energy)
     {
-        energyBar1.slider1.value += energy;
-        energyBar1.SetEnergy(energyBar1.slider1.value);
+        energyBar1.slider.value += energy;
+        energyBar1.SetEnergy(energyBar1.slider.value);
     }
 
     void MovePlayer1()
@@ -201,13 +201,13 @@ public class GnomeMovement : MonoBehaviour
     //}
     void CheckMaxTemp1()
     {
-        if (temperatureBar1.slider1.value == temperatureBar1.slider1.maxValue)
+        if (temperatureBar1.slider.value == temperatureBar1.slider.maxValue)
         {
             damageTimer1 -= Time.deltaTime;
 
             if (damageTimer1 <= 0)
             {
-                energyBar1.slider1.value -= 1;
+                energyBar1.slider.value -= 1;
                 damageTimer1 = damageCooldown1;
             }
         }
@@ -215,10 +215,10 @@ public class GnomeMovement : MonoBehaviour
 
     public void TakeDamage1(float amount)
     {
-        energyBar1.slider1.value -= amount;
-        fill1.color = energyGradient1.Evaluate(slider1.normalizedValue);
+        energyBar1.slider.value -= amount;
+        fill1.color = energyGradient1.Evaluate(slider.normalizedValue);
 
-        if (energyBar1.slider1.value <= 0)
+        if (energyBar1.slider.value <= 0)
         {
             loseScreen1.gameObject.SetActive(true);
             gameObject.SetActive(false);
