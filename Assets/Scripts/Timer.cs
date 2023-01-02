@@ -8,34 +8,44 @@ public class Timer : MonoBehaviour
 {
     //[SerializeField] private float timerSpeed = 2f;
     //private float elapsed;
-    float currentTime = 0f;
-    float startingTime = 0f;
+
+    float time = 180f;
 
     //public Text timerText;
-    public TextMeshPro timerText;
+    public GameObject TimerObj;
+    private TextMeshProUGUI timerText;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        currentTime = startingTime;
+        timerText = TimerObj.GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
     {
-        currentTime += 1 * Time.deltaTime;
-        timerText.text = currentTime.ToString("F1");
+        if(time > 0f)
+        {
+            time -= 1 * Time.deltaTime;
+        }
+        else
+        {
+            time = 0f;
+            
+        }
+        DisplayTime(time);
     }
 
+    void DisplayTime(float timeToDisplay)
+    {
+        if (timeToDisplay < 0)
+        {
+            timeToDisplay = 0f;
+        }
 
-    // Update is called once per frame
-    //private void Update()
-    //{
-    //    elapsed += Time.deltaTime;
-    //    if(elapsed >= timerSpeed)
-    //    {
-    //        elapsed = 0f;
-    //        //GetComponent<Flasher>().Flash;
-    //    }
-    //}
+        //Calculates the number of minutes using time/60
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60f);
+        //Calculates the number of seconds using the remainder of time/60
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60f);
+
+        timerText.text = (minutes + " : " + seconds);
+    }
 }
