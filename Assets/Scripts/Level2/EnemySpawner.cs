@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    private float spawnInterval = 7f;
+    private float spawnInterval = 1f;
     public GameObject spawner;
     
 
@@ -21,11 +21,6 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(interval);
         GameObject newEnemy = Instantiate(enemy, spawner.transform.position, Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
     }
     
 }

@@ -15,10 +15,16 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GnomeMovement gnomeMovement = collision.gameObject.GetComponent<GnomeMovement>();
+        TreeHealth treeHealth = collision.gameObject.GetComponent<TreeHealth>();
 
         if (gnomeMovement != null)
         {
             gnomeMovement.TakeDamage(damage);
+            Die();
+        }
+        if (treeHealth != null)
+        {
+            treeHealth.TakeDamage(damage);
             Die();
         }
 
