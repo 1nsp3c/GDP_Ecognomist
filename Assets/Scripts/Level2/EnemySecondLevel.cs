@@ -43,7 +43,6 @@ public class EnemySecondLevel : MonoBehaviour
             {
                 StartCoroutine(Shoot());
             }
-                
         }
         else 
         {
