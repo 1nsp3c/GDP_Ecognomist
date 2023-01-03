@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
@@ -40,6 +41,7 @@ public class GnomeMovement : MonoBehaviour
     public GameObject WinScreen;
     public GameObject loseScreen;
     private Enemy enemy;
+    private SpriteRenderer spriteRend;
 
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
@@ -87,6 +89,7 @@ public class GnomeMovement : MonoBehaviour
         moveRight = false;
         textMeshSeed = seedText.GetComponent<TextMeshProUGUI>();
         WinScreen.gameObject.SetActive(false);
+        spriteRend = GetComponent<SpriteRenderer>();
 
         enemy = GetComponent<Enemy>();
         
@@ -293,6 +296,7 @@ public class GnomeMovement : MonoBehaviour
             if (damageTimer <= 0)
             {
                 energyBar.slider.value -= 1;
+                StartCoroutine(FlashRed());
                 damageTimer = damageCooldown;
             }
         }
@@ -301,6 +305,7 @@ public class GnomeMovement : MonoBehaviour
     public void TakeDamage(float amount) 
     {
         energyBar.slider.value -= amount;
+        StartCoroutine(FlashRed());
         fill.color = energyGradient.Evaluate(slider.normalizedValue);
 
         if (energyBar.slider.value <= 0) 
@@ -310,5 +315,11 @@ public class GnomeMovement : MonoBehaviour
             
         }
     }
-    
+    public IEnumerator FlashRed()
+    {
+        spriteRend.color = new Color(1, 0, 0, 0.5f);
+        yield return new WaitForSeconds(0.2f);
+        spriteRend.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+    }
 }
