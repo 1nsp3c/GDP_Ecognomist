@@ -211,7 +211,7 @@ public class GnomeMovement : MonoBehaviour
         {
             if (collision.gameObject.tag == "Collectables")  //tags with the name collectables
             {
-                AddEnergy(10);
+                AddEnergy(5);
                 //temperatureBar.ResetSlider();
                 Destroy(collision.gameObject); //destroy collectable
 
@@ -235,6 +235,7 @@ public class GnomeMovement : MonoBehaviour
         else if (collision.gameObject.name == "Tree (1)" && collectArray.Count == 1)
         {
             collectArray.Clear();
+            temperatureBar.fillTime /= 3f;
             tree1.animator.SetTrigger("ASD");
             tree1.boxCollider2D.enabled = false;
             textMeshText1.gameObject.SetActive(false);
@@ -243,6 +244,7 @@ public class GnomeMovement : MonoBehaviour
         else if (collision.gameObject.name == "Tree (2)" && collectArray.Count == 1)
         {
             collectArray.Clear();
+            temperatureBar.fillTime /= 3f;
             tree2.animator.SetTrigger("ASD");
             tree2.boxCollider2D.enabled = false;
             textMeshText2.gameObject.SetActive(false);
@@ -251,6 +253,7 @@ public class GnomeMovement : MonoBehaviour
         else if (collision.gameObject.name == "Tree (3)" && collectArray.Count == 1)
         {
             collectArray.Clear();
+            temperatureBar.fillTime /= 3f;
             tree3.animator.SetTrigger("ASD");
             tree3.boxCollider2D.enabled = false;
             textMeshText3.gameObject.SetActive(false);
@@ -259,6 +262,7 @@ public class GnomeMovement : MonoBehaviour
         else if (collision.gameObject.name == "Tree (4)" && collectArray.Count == 1)
         {
             collectArray.Clear();
+            temperatureBar.fillTime /= 3f;
             tree4.animator.SetTrigger("ASD");
             tree4.boxCollider2D.enabled = false;
             textMeshText4.gameObject.SetActive(false);
