@@ -14,7 +14,7 @@ public class EnemySecondLevel : MonoBehaviour
     public CapsuleCollider2D bodyCollider;
     public GameObject bullet;
     public Transform shootPos;
-    public Level2Gnome player;
+    Level2Gnome player;
     public bool mustFlip;
     public Transform groundCheck;
     public LayerMask groundLayer;
