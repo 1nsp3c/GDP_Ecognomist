@@ -4275,9 +4275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec8334d797ea444a970116935174352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpHeight: 16
-  canDoubleJump: 0
   timeBetweenShots: 0.5
   shootSpeed: 5
   fireRate: 0.7
@@ -4315,21 +4312,18 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  hasJumped: 0
-  facingRight: 1
-  isRunning: 0
-  animator: {fileID: 885344733}
   energyBar: {fileID: 1273439897}
   groundCheck: {fileID: 1441284605}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   fill: {fileID: 1528007071}
-  temperatureBar: {fileID: 2015721663}
   WinScreen: {fileID: 806128345}
   loseScreen: {fileID: 351246198}
+  animator: {fileID: 885344733}
+  temperatureBar: {fileID: 2015721663}
   seedText: {fileID: 816496872}
-  seedCounts: 0
+  seedPlanted: 0
   tree: {fileID: 1293018014}
   tree1: {fileID: 308339749}
   tree2: {fileID: 758926443}
@@ -9668,6 +9662,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   fill: {fileID: 883021620}
+  gnomeMovement: {fileID: 885344729}
 --- !u!1001 &2069564026
 PrefabInstance:
   m_ObjectHideFlags: 0
