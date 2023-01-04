@@ -8,10 +8,6 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class GnomeMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
-    public float speed = 10f;
-    public float jumpHeight = 10f;
-    public bool canDoubleJump;
 
     public float timeBetweenShots, shootSpeed;
     public float fireRate;
@@ -24,30 +20,40 @@ public class GnomeMovement : MonoBehaviour
     public Slider slider;
     public Gradient energyGradient;
 
-    public bool hasJumped;
-    public bool facingRight = true;
-    public bool isRunning = false;
-    public Animator animator;
 
     public EnergyBar energyBar;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public Image fill;
 
-    private bool moveLeft;
-    private bool moveRight;
-    private float horizontalMove;
-    public TemperatureBar temperatureBar;
+    [Header("Canvas")]
     public GameObject WinScreen;
     public GameObject loseScreen;
-    private Enemy enemy;
     private SpriteRenderer spriteRend;
 
+    [Header("Movement")]
+    bool moveLeft;
+    bool moveRight;
+    float horizontalMove;
+    bool hasJumped;
+    bool facingRight = true;
+    bool isRunning = false;
+    Rigidbody2D rb;
+    float speed = 10f;
+    float jumpHeight = 16f;
+    bool canDoubleJump;
+    public Animator animator;
+    public TemperatureBar temperatureBar;
+    Enemy enemy;
+
+    [Header("Seeds")]
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
     private TextMeshProUGUI textMeshSeed;
-    public int seedCounts = 0;
+    private int seedCounts = 0;
+    public bool seedPlanted;
 
+    [Header("Trees")]
     public Tree tree;
     public Tree tree1;
     public Tree tree2;
@@ -228,9 +234,9 @@ public class GnomeMovement : MonoBehaviour
         {
             collectArray.Clear(); //Removes all elements from the arraylist
             tree.animator.SetTrigger("ASD");
-            temperatureBar.fillTime /= 3f;
+            //temperatureBar.fillTime /= 3f;
             tree.boxCollider2D.enabled = false;
-
+            StartCoroutine(TempSpeedReduction());
             textMeshText.gameObject.SetActive(false);
             seedCounts += 1;
         }
@@ -238,36 +244,40 @@ public class GnomeMovement : MonoBehaviour
         else if (collision.gameObject.name == "Tree (1)" && collectArray.Count == 1)
         {
             collectArray.Clear();
-            temperatureBar.fillTime /= 3f;
+            //temperatureBar.fillTime /= 3f;
             tree1.animator.SetTrigger("ASD");
             tree1.boxCollider2D.enabled = false;
+            StartCoroutine(TempSpeedReduction());
             textMeshText1.gameObject.SetActive(false);
             seedCounts += 1;
         }
         else if (collision.gameObject.name == "Tree (2)" && collectArray.Count == 1)
         {
             collectArray.Clear();
-            temperatureBar.fillTime /= 3f;
+            //temperatureBar.fillTime /= 3f;
             tree2.animator.SetTrigger("ASD");
             tree2.boxCollider2D.enabled = false;
+            StartCoroutine(TempSpeedReduction());
             textMeshText2.gameObject.SetActive(false);
             seedCounts += 1;
         }
         else if (collision.gameObject.name == "Tree (3)" && collectArray.Count == 1)
         {
             collectArray.Clear();
-            temperatureBar.fillTime /= 3f;
+            //temperatureBar.fillTime /= 3f;
             tree3.animator.SetTrigger("ASD");
             tree3.boxCollider2D.enabled = false;
+            StartCoroutine(TempSpeedReduction());
             textMeshText3.gameObject.SetActive(false);
             seedCounts += 1;
         }
         else if (collision.gameObject.name == "Tree (4)" && collectArray.Count == 1)
         {
             collectArray.Clear();
-            temperatureBar.fillTime /= 3f;
+            //temperatureBar.fillTime /= 3f;
             tree4.animator.SetTrigger("ASD");
             tree4.boxCollider2D.enabled = false;
+            StartCoroutine(TempSpeedReduction());
             textMeshText4.gameObject.SetActive(false);
             seedCounts += 1;
         }
@@ -302,7 +312,6 @@ public class GnomeMovement : MonoBehaviour
             }
         }
     }
-
     public void TakeDamage(float amount) 
     {
         energyBar.slider.value -= amount;
@@ -313,7 +322,6 @@ public class GnomeMovement : MonoBehaviour
         {
             loseScreen.gameObject.SetActive(true);
             gameObject.SetActive(false);
-            
         }
     }
     public IEnumerator FlashRed()
@@ -322,5 +330,11 @@ public class GnomeMovement : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         spriteRend.color = Color.white;
         yield return new WaitForSeconds(0.2f);
+    }
+    public IEnumerator TempSpeedReduction()
+    {
+        seedPlanted = true;
+        yield return new WaitForSeconds(0.1f);
+        seedPlanted = false;
     }
 }
