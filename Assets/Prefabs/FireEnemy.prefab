@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 8310659151908741762}
   - component: {fileID: 8310659151908741761}
   - component: {fileID: 8310659151908741790}
+  - component: {fileID: 4841074498902370464}
   m_Layer: 7
   m_Name: FireEnemy
   m_TagString: Enemy
@@ -201,7 +202,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.27582932, y: 0.031826496}
+  m_Offset: {x: -0.06999302, y: -1.8812377}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -212,7 +213,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.7269402, y: 4.809041}
+  m_Size: {x: 3.3152676, y: 0.98291254}
   m_EdgeRadius: 0
 --- !u!114 &8310659151908741761
 MonoBehaviour:
@@ -229,9 +230,15 @@ MonoBehaviour:
   range: 20
   timeBetweenShots: 2
   shootSpeed: 20
+  bodyCollider: {fileID: 0}
   bullet: {fileID: 8060373695140410600, guid: e366187bbe9742e4fb107a1966933992, type: 3}
   shootPos: {fileID: 8310659152263357860}
-  tree: {fileID: 2056630742218334018, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+  player: {fileID: 0}
+  mustFlip: 0
+  groundCheck: {fileID: 8310659153704859214}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!95 &8310659151908741790
 Animator:
   serializedVersion: 4
@@ -252,6 +259,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &4841074498902370464
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8310659151908741760}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17421436, y: 0.30270028}
+  m_Size: {x: 4.0891933, y: 4.975784}
+  m_Direction: 0
 --- !u!1 &8310659152263357867
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8310659153704859213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.4886227, y: -1.2164764, z: 0}
+  m_LocalPosition: {x: 2.29, y: -2.94, z: 0}
   m_LocalScale: {x: 0.40291, y: 0.40291, z: 0.40291}
   m_ConstrainProportionsScale: 0
   m_Children: []
