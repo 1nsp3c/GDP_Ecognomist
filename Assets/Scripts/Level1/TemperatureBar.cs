@@ -40,12 +40,4 @@ public class TemperatureBar : MonoBehaviour
     {
         fillTime = 0f;
     }
-    //public void ReduceTempSpeed()
-    //{
-    //    FillSlider();
-    //    if (gnomeMovement.seedCounts == 1)
-    //    {
-
-    //    }
-    //}
 }
