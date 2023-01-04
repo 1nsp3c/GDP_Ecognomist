@@ -7338,7 +7338,7 @@ MonoBehaviour:
   timeBetweenShots1: 0.5
   shootSpeed1: 5
   fireRate1: 1
-  sticks1: {fileID: 5786834492126358319, guid: bcac419ffdab69243bc40c02cb18f2d1, type: 3}
+  sticks1: {fileID: 6906366603217062701, guid: 49842b58897cc834189bcdf8fe3ac904, type: 3}
   shootPos1: {fileID: 1307802642}
   maxEnergy1: 30
   slider: {fileID: 1307802641}
