@@ -297,6 +297,7 @@ public class GnomeMovement : MonoBehaviour
             {
                 energyBar.slider.value -= 1;
                 StartCoroutine(FlashRed());
+                fill.color = energyGradient.Evaluate(slider.normalizedValue);
                 damageTimer = damageCooldown;
             }
         }
