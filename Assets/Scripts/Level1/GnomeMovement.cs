@@ -8,12 +8,13 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class GnomeMovement : MonoBehaviour
 {
-
+    [Header("Attacks")]
     public float timeBetweenShots, shootSpeed;
     public float fireRate;
     float nextFire;
     public GameObject sticks;
     public Transform shootPos;
+    public SpriteRenderer stickSprite;
 
     public int maxEnergy = 30;
     public float seedEnergy = 6;
@@ -137,6 +138,7 @@ public class GnomeMovement : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         shootSpeed *= -1;
         facingRight = !facingRight;
+        stickSprite.flipX = !stickSprite.flipX;
     }
     public void Jumping()
     {

@@ -17,7 +17,7 @@ public class Level2Gnome : MonoBehaviour
     float nextFire1;
     public GameObject sticks1;
     public Transform shootPos1;
-    public SpriteRenderer sticksSprite;
+    public SpriteRenderer waterSprite;
 
     public int maxEnergy1 = 30;
 
@@ -112,7 +112,7 @@ public class Level2Gnome : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         shootSpeed1 *= -1;
         facingRight1 = !facingRight1;
-        sticksSprite.flipX = !sticksSprite.flipX;
+        waterSprite.flipX = !waterSprite.flipX;
     }
     public void Jumping1()
     {
