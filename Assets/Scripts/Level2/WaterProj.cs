@@ -24,6 +24,13 @@ public class WaterProj : MonoBehaviour
         {
             Die();
         }
+        
+        //Collide with Tree
+        if (collision.gameObject.layer == 9)
+        {
+            Tree treeScript = collision.gameObject.GetComponent<Tree>();
+            treeScript.timesHit += 1;
+        }
     }
     IEnumerator CountDownTimer()
     {
