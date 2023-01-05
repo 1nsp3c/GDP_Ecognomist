@@ -17,6 +17,7 @@ public class Level2Gnome : MonoBehaviour
     float nextFire1;
     public GameObject sticks1;
     public Transform shootPos1;
+    public SpriteRenderer waterSprite;
 
     public int maxEnergy1 = 30;
 
@@ -111,6 +112,7 @@ public class Level2Gnome : MonoBehaviour
         transform.Rotate(new Vector3(0, 180, 0));
         shootSpeed1 *= -1;
         facingRight1 = !facingRight1;
+        waterSprite.flipX = !waterSprite.flipX;
     }
     public void Jumping1()
     {
@@ -201,6 +203,7 @@ public class Level2Gnome : MonoBehaviour
             if (damageTimer1 <= 0)
             {
                 energyBar1.slider.value -= 1;
+                fill1.color = energyGradient1.Evaluate(slider.normalizedValue);
                 damageTimer1 = damageCooldown1;
             }
         }

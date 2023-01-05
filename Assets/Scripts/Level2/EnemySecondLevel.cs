@@ -11,9 +11,13 @@ public class EnemySecondLevel : MonoBehaviour
     private bool patrol;
     private bool canShoot;
     public float timeBetweenShots, shootSpeed;
+    public CapsuleCollider2D bodyCollider;
     public GameObject bullet;
     public Transform shootPos;
-    public Tree tree;
+    Level2Gnome player;
+    public bool mustFlip;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +25,17 @@ public class EnemySecondLevel : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         patrol = true;
         canShoot = true;
-        tree = FindObjectOfType<Tree>();
+        bodyCollider = GetComponent<CapsuleCollider2D>();
+        player = FindObjectOfType<Level2Gnome>();
+        
     }
-
+    private void FixedUpdate()
+    {
+        if (patrol)
+        {
+            mustFlip = !Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -32,7 +44,7 @@ public class EnemySecondLevel : MonoBehaviour
             Patrol();
         }
         
-        float distToPlayer = Vector2.Distance(transform.position, tree.transform.position);
+        float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (distToPlayer <= range)
         {
@@ -43,7 +55,6 @@ public class EnemySecondLevel : MonoBehaviour
             {
                 StartCoroutine(Shoot());
             }
-                
         }
         else 
         {
@@ -52,9 +63,20 @@ public class EnemySecondLevel : MonoBehaviour
     }
     void Patrol()
     {
+        if (mustFlip || bodyCollider.IsTouchingLayers())
+        {
+            Flip();
+        }
         rb2d.velocity = new Vector2(walkSpeed, rb2d.velocity.y);
     }
-
+    void Flip()
+    {
+        patrol = false;
+        transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        walkSpeed *= -1;
+        patrol = true;
+        bullet.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+    }
     IEnumerator Shoot()
     {
         canShoot = false;

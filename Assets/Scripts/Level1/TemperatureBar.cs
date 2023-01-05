@@ -9,6 +9,7 @@ public class TemperatureBar : MonoBehaviour
     public float fillTime = 0f;
     public Gradient tempGradient;
     public Image fill;
+    public GnomeMovement gnomeMovement;
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +20,19 @@ public class TemperatureBar : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         FillSlider();
+        //ReduceTempSpeed();
     }
     public void FillSlider()
     {
+        fillTime += 0.04f * Time.deltaTime;
+        if (gnomeMovement.seedPlanted == true)
+        {
+            fillTime -= 0.01f;
+        }
         slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, fillTime);
 
-        fillTime += 0.04f * Time.deltaTime;
         fill.color = tempGradient.Evaluate(slider.normalizedValue);
     }
 
