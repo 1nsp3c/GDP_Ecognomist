@@ -30,6 +30,7 @@ public class WaterProj : MonoBehaviour
         {
             Tree treeScript = collision.gameObject.GetComponent<Tree>();
             treeScript.timesHit += 1;
+            Die();
         }
     }
     IEnumerator CountDownTimer()
