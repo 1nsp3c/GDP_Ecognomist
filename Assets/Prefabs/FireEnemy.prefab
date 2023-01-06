@@ -233,12 +233,12 @@ MonoBehaviour:
   bodyCollider: {fileID: 0}
   bullet: {fileID: 8060373695140410600, guid: e366187bbe9742e4fb107a1966933992, type: 3}
   shootPos: {fileID: 8310659152263357860}
-  player: {fileID: 0}
   mustFlip: 0
   groundCheck: {fileID: 8310659153704859214}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  energyBar: {fileID: 8310659152295566207}
 --- !u!95 &8310659151908741790
 Animator:
   serializedVersion: 4

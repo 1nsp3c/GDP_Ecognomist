@@ -18,6 +18,7 @@ public class EnemySecondLevel : MonoBehaviour
     public bool mustFlip;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public EnergyBar energyBar;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,8 @@ public class EnemySecondLevel : MonoBehaviour
         canShoot = true;
         bodyCollider = GetComponent<CapsuleCollider2D>();
         player = FindObjectOfType<Level2Gnome>();
-        
+        energyBar.SetMaxEnergy(30);
+
     }
     private void FixedUpdate()
     {
@@ -60,6 +62,7 @@ public class EnemySecondLevel : MonoBehaviour
         {
             patrol = true;
         }
+        
     }
     void Patrol()
     {
@@ -82,9 +85,18 @@ public class EnemySecondLevel : MonoBehaviour
         canShoot = false;
         yield return new WaitForSeconds(timeBetweenShots);
         GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
-
         newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * walkSpeed * Time.fixedDeltaTime, 0);
         canShoot = true;
 
+    }
+
+    public void TakeDamageFire(float amount) 
+    {
+        energyBar.slider.value -= amount;
+        if (energyBar.slider.value <= 0)
+        {
+            Destroy(gameObject);
+        }
+        print("Took dmg");
     }
 }

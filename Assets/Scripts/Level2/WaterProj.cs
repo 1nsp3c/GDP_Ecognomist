@@ -14,11 +14,10 @@ public class WaterProj : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+        EnemySecondLevel enemy = collision.gameObject.GetComponent<EnemySecondLevel>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
-            Die();
+            enemy.TakeDamageFire(damage);
         }
         if (collision.gameObject.tag == "Walls")
         {
