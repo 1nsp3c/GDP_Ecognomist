@@ -29,7 +29,7 @@ public class EnemySecondLevel : MonoBehaviour
         bodyCollider = GetComponent<CapsuleCollider2D>();
         player = FindObjectOfType<Level2Gnome>();
         energyBar.SetMaxEnergy(30);
-
+        Physics2D.IgnoreLayerCollision(7, 9);
     }
     private void FixedUpdate()
     {
