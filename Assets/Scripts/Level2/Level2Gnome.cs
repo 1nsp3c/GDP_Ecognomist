@@ -38,7 +38,7 @@ public class Level2Gnome : MonoBehaviour
     private bool moveLeft1;
     private bool moveRight1;
     private float horizontalMove1;
-    public TemperatureBar temperatureBar1;
+    public Level2TempBar tempbar;
     public GameObject WinScreen1;
     public GameObject loseScreen1;
     private Enemy enemy1;
@@ -196,7 +196,7 @@ public class Level2Gnome : MonoBehaviour
     //}
     void CheckMaxTemp1()
     {
-        if (temperatureBar1.slider.value == temperatureBar1.slider.maxValue)
+        if (tempbar.slider.value == tempbar.slider.maxValue)
         {
             damageTimer1 -= Time.deltaTime;
 

@@ -18,6 +18,7 @@ public class WaterProj : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamageFire(damage);
+            Die();
         }
         if (collision.gameObject.tag == "Walls")
         {
