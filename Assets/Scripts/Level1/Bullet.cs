@@ -15,6 +15,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GnomeMovement gnomeMovement = collision.gameObject.GetComponent<GnomeMovement>();
+        Level2Gnome level2Gnome = collision.gameObject.GetComponent<Level2Gnome>();
         TreeHealth treeHealth = collision.gameObject.GetComponent<TreeHealth>();
 
         if (gnomeMovement != null)
@@ -27,16 +28,17 @@ public class Bullet : MonoBehaviour
             treeHealth.TakeDamage(damage);
             Die();
         }
+        if (level2Gnome != null)
+        {
+            level2Gnome.TakeDamage1(damage);
+            Die();
+        }
 
         if (collision.gameObject.tag == "Walls") 
         {
             Die();
         }
         if (collision.gameObject.tag == "Collectables")
-        {
-            Die();
-        }
-        if (collision.gameObject.tag == "Walls")
         {
             Die();
         }

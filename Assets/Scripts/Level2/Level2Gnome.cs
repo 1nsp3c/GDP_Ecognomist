@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
@@ -34,6 +35,7 @@ public class Level2Gnome : MonoBehaviour
     public Transform groundCheck1;
     public LayerMask groundLayer1;
     public Image fill1;
+    public SpriteRenderer playerSpriteRend;
 
     private bool moveLeft1;
     private bool moveRight1;
@@ -213,6 +215,7 @@ public class Level2Gnome : MonoBehaviour
     {
         energyBar1.slider.value -= amount;
         fill1.color = energyGradient1.Evaluate(slider.normalizedValue);
+        StartCoroutine(FlashRed());
 
         if (energyBar1.slider.value <= 0)
         {
@@ -222,4 +225,11 @@ public class Level2Gnome : MonoBehaviour
         }
     }
 
+    public IEnumerator FlashRed()
+    {
+        playerSpriteRend.color = new Color(1, 0, 0, 0.5f);
+        yield return new WaitForSeconds(0.2f);
+        playerSpriteRend.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+    }
 }
