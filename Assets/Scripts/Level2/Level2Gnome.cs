@@ -72,7 +72,7 @@ public class Level2Gnome : MonoBehaviour
         moveLeft1 = false;
         moveRight1 = false;
         WinScreen1.gameObject.SetActive(false);
-
+        waterSprite.flipX = true;
         enemy1 = GetComponent<Enemy>();
 
     }
