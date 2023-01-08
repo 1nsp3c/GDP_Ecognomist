@@ -241,6 +241,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   energyBar: {fileID: 8310659152295566207}
+  bulletSprite: {fileID: 7145382141311786954, guid: e366187bbe9742e4fb107a1966933992, type: 3}
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 1024

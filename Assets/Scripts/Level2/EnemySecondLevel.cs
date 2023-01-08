@@ -20,6 +20,7 @@ public class EnemySecondLevel : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public EnergyBar energyBar;
+    public SpriteRenderer bulletSprite;
     public bool TargetVisible { get; private set; }
     [SerializeField]
     private LayerMask playerLayerMask;
@@ -37,6 +38,7 @@ public class EnemySecondLevel : MonoBehaviour
         player = FindObjectOfType<Level2Gnome>();
         energyBar.SetMaxEnergy(30);
         Physics2D.IgnoreLayerCollision(7, 9);
+        bulletSprite.flipX = false;
     }
     private void FixedUpdate()
     {
@@ -90,6 +92,7 @@ public class EnemySecondLevel : MonoBehaviour
         walkSpeed *= -1;
         patrol = true;
         bullet.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+        bulletSprite.flipX = !bulletSprite.flipX;
     }
     IEnumerator Shoot()
     {

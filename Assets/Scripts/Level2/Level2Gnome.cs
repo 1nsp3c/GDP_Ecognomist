@@ -232,4 +232,12 @@ public class Level2Gnome : MonoBehaviour
         playerSpriteRend.color = Color.white;
         yield return new WaitForSeconds(0.2f);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            loseScreen1.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+    }
 }
