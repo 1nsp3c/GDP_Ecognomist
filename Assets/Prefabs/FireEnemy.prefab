@@ -233,7 +233,7 @@ MonoBehaviour:
   timeBetweenShots: 2
   shootSpeed: 100
   bodyCollider: {fileID: 4841074498902370464}
-  bullet: {fileID: 8060373695140410600, guid: e366187bbe9742e4fb107a1966933992, type: 3}
+  bullet: {fileID: 8848768066099273478, guid: b60d85f892f0c9e428c67f461888556c, type: 3}
   shootPos: {fileID: 8310659152263357860}
   mustFlip: 0
   groundCheck: {fileID: 8310659153704859214}
@@ -308,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8310659152263357867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.41, y: -0.6, z: 0}
+  m_LocalPosition: {x: 3.56, y: 0.09, z: 0}
   m_LocalScale: {x: 0.40291, y: 0.40291, z: 0.40291}
   m_ConstrainProportionsScale: 0
   m_Children: []
