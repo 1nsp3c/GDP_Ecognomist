@@ -13,6 +13,6 @@ public class MenuManager : MonoBehaviour
     }
     public void levelSelect()
     {
-        SceneManager.LoadScene("Level Select");
+        SceneManager.LoadScene(0);
     }
 }
