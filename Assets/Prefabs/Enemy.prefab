@@ -339,6 +339,12 @@ MonoBehaviour:
   textMeshText2: {fileID: 0}
   textMeshText3: {fileID: 0}
   textMeshText4: {fileID: 0}
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  visibilityLayer:
+    serializedVersion: 2
+    m_Bits: 1032
 --- !u!50 &43496012790852809
 Rigidbody2D:
   serializedVersion: 4

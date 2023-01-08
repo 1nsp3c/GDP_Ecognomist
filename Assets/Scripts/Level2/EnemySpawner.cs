@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator spawnEnemy(float interval, GameObject enemy) 
     {
-        while (spawnCount < 2) 
+        while (spawnCount < 1) 
         {
             yield return new WaitForSeconds(interval);
             GameObject newEnemy = Instantiate(enemy, spawner.transform.position, Quaternion.identity);

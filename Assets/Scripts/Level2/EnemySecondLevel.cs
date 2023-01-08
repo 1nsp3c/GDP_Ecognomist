@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemySecondLevel : MonoBehaviour
 {
     public float range;
-    private float walkSpeed = 10;
+    public float walkSpeed = 10;
+    public float bulletSpeed = 30;
     //public GameObject tree;
     private Rigidbody2D rb2d;
     private bool patrol;
@@ -19,6 +20,12 @@ public class EnemySecondLevel : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public EnergyBar energyBar;
+    public bool TargetVisible { get; private set; }
+    [SerializeField]
+    private LayerMask playerLayerMask;
+
+    [SerializeField]
+    private LayerMask visibilityLayer;
 
     // Start is called before the first frame update
     void Start()
@@ -45,11 +52,16 @@ public class EnemySecondLevel : MonoBehaviour
         {
             Patrol();
         }
-        
+        TargetVisible = CheckTargetVisible();
+
         float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distToPlayer <= range)
+        if (distToPlayer <= range && TargetVisible == true)
         {
+            if (player.transform.position.x > transform.position.x && transform.localScale.x < 0 || player.transform.position.x < transform.position.x && transform.localScale.x > 0) 
+            {
+                Flip();
+            }
             patrol = false;
             rb2d.velocity = Vector2.zero;
 
@@ -62,7 +74,6 @@ public class EnemySecondLevel : MonoBehaviour
         {
             patrol = true;
         }
-        
     }
     void Patrol()
     {
@@ -89,7 +100,17 @@ public class EnemySecondLevel : MonoBehaviour
         canShoot = true;
 
     }
-
+    private bool CheckTargetVisible()
+    {
+        //check the visibility of the player or children
+        var result = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 11, visibilityLayer);
+        if (result.collider != null)
+        {
+            //this will let the zombies not able to detect the player or children who are behind the walls
+            return (playerLayerMask & (1 << result.collider.gameObject.layer)) != 0;
+        }
+        return false;
+    }
     public void TakeDamageFire(float amount) 
     {
         energyBar.slider.value -= amount;

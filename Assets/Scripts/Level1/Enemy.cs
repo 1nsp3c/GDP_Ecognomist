@@ -29,6 +29,13 @@ public class Enemy : MonoBehaviour
     public TextMeshProUGUI textMeshText3;
     public TextMeshProUGUI textMeshText4;
 
+    [SerializeField]
+    private LayerMask playerLayerMask;
+
+    [SerializeField]
+    private LayerMask visibilityLayer;
+    public bool TargetVisible { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +53,10 @@ public class Enemy : MonoBehaviour
             Patrol();
 
         }
+        TargetVisible = CheckTargetVisible();
         distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distToPlayer <= range)
+        if (distToPlayer <= range && TargetVisible == true)
         {
             if (player.position.x > transform.position.x && transform.localScale.x < 0 || player.position.x < transform.position.x && transform.localScale.x > 0)
             {
@@ -84,7 +92,17 @@ public class Enemy : MonoBehaviour
         }
         rb2d.velocity = new Vector2(walkSpeed, rb2d.velocity.y);
     }
-
+    private bool CheckTargetVisible()
+    {
+        //check the visibility of the player or children
+        var result = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 11, visibilityLayer);
+        if (result.collider != null)
+        {
+            //this will let the zombies not able to detect the player or children who are behind the walls
+            return (playerLayerMask & (1 << result.collider.gameObject.layer)) != 0;
+        }
+        return false;
+    }
     void Flip() 
     {
         patrol = false;
