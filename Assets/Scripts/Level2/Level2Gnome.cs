@@ -37,8 +37,8 @@ public class Level2Gnome : MonoBehaviour
     public Image fill1;
     public SpriteRenderer playerSpriteRend;
 
-    private bool moveLeft1;
-    private bool moveRight1;
+    public bool moveLeft1;
+    public bool moveRight1;
     private float horizontalMove1;
     public Level2TempBar tempbar;
     public GameObject WinScreen1;

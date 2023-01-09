@@ -9,7 +9,8 @@ using static UnityEngine.EventSystems.EventTrigger;
 public class GnomeMovement : MonoBehaviour
 {
     [Header("Attacks")]
-    public float timeBetweenShots, shootSpeed;
+    public float timeBetweenShots;
+    public float shootSpeed;
     public float fireRate;
     float nextFire;
     public GameObject sticks;
