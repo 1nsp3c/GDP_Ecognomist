@@ -186,7 +186,7 @@ public class Level2Gnome : MonoBehaviour
         if (Time.time > nextFire1)
         {
             nextFire1 = Time.time + fireRate1;
-            animator1.SetTrigger("Attack");
+            animator1.SetTrigger("WaterGun");
             yield return new WaitForSeconds(timeBetweenShots1);
             GameObject newBullet = Instantiate(sticks1, shootPos1.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed1 * speed1, 0);

@@ -29,7 +29,7 @@ public class TemperatureBar : MonoBehaviour
         fillTime += 0.04f * Time.deltaTime;
         if (gnomeMovement.seedPlanted == true)
         {
-            fillTime -= 0.01f;
+            fillTime /= 2;
         }
         slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, fillTime);
 

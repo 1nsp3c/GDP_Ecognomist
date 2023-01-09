@@ -11,6 +11,7 @@ public class WaterProj : MonoBehaviour
     void Start()
     {
         StartCoroutine(CountDownTimer());
+        Physics2D.IgnoreLayerCollision(2, 8);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -30,6 +31,9 @@ public class WaterProj : MonoBehaviour
         {
             Tree treeScript = collision.gameObject.GetComponent<Tree>();
             treeScript.timesHit += 1;
+            treeScript.ResetTempBar();
+
+
             Die();
         }
     }

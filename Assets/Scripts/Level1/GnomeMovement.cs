@@ -210,7 +210,7 @@ public class GnomeMovement : MonoBehaviour
         if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
-            animator.SetTrigger("Attack");
+            animator.SetTrigger("Stick");
             yield return new WaitForSeconds(timeBetweenShots);
             GameObject newBullet = Instantiate(sticks, shootPos.position, Quaternion.identity);
             newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * speed, 0);
