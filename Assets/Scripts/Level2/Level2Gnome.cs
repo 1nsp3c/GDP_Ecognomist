@@ -205,6 +205,7 @@ public class Level2Gnome : MonoBehaviour
             if (damageTimer1 <= 0)
             {
                 energyBar1.slider.value -= 1;
+                StartCoroutine(FlashRed());
                 fill1.color = energyGradient1.Evaluate(slider.normalizedValue);
                 damageTimer1 = damageCooldown1;
             }

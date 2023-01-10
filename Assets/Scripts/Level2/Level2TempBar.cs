@@ -27,14 +27,14 @@ public class Level2TempBar : MonoBehaviour
     public void FillSlider()
     {
         //fillTime += 0.4f * Time.deltaTime;
-        fillTime += 0.04f * Time.deltaTime;
-        slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, fillTime);
+        fillTime -= 0.04f * Time.deltaTime;
+        slider.value = Mathf.Lerp(slider.maxValue, slider.minValue, fillTime);
 
         fill.color = tempGradient.Evaluate(slider.normalizedValue);
     }
 
     public void ResetSlider()
     {
-        fillTime = 0f;
+        fillTime = 1f;
     }
 }
