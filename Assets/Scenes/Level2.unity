@@ -5973,6 +5973,8 @@ MonoBehaviour:
     m_Bits: 8
   fill1: {fileID: 117085959}
   playerSpriteRend: {fileID: 1307802648}
+  moveLeft1: 0
+  moveRight1: 0
   tempbar: {fileID: 303732091}
   WinScreen1: {fileID: 842252885}
   loseScreen1: {fileID: 655575334}
