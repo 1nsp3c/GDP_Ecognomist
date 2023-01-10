@@ -1764,8 +1764,8 @@ MonoBehaviour:
   fillTime: 0
   tempGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
-    key1: {r: 0, g: 1, b: 0.085513115, a: 1}
+    key0: {r: 0.023620605, g: 1, b: 0, a: 1}
+    key1: {r: 1, g: 0, b: 0.009131432, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5973,6 +5973,8 @@ MonoBehaviour:
     m_Bits: 8
   fill1: {fileID: 117085959}
   playerSpriteRend: {fileID: 1307802648}
+  moveLeft1: 0
+  moveRight1: 0
   tempbar: {fileID: 303732091}
   WinScreen1: {fileID: 842252885}
   loseScreen1: {fileID: 655575334}
