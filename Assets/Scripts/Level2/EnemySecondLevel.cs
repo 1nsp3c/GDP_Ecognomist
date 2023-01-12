@@ -7,7 +7,7 @@ public class EnemySecondLevel : MonoBehaviour
     public float range;
     public float walkSpeed = 10;
     public float bulletSpeed = 30;
-    //public GameObject tree;
+
     private Rigidbody2D rb2d;
     private bool patrol;
     private bool canShoot;
@@ -26,6 +26,9 @@ public class EnemySecondLevel : MonoBehaviour
 
     [SerializeField]
     private LayerMask visibilityLayer;
+
+    public GameObject tree;
+    public GameObject treeFire;
 
     // Start is called before the first frame update
     void Start()
@@ -110,6 +113,14 @@ public class EnemySecondLevel : MonoBehaviour
             return (playerLayerMask & (1 << result.collider.gameObject.layer)) != 0;
         }
         return false;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Tree") 
+        {
+            tree.SetActive(false);
+            treeFire.SetActive(true);
+        }
     }
     public void TakeDamageFire(float amount) 
     {
