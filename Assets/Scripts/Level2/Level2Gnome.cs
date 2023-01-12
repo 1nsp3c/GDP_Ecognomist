@@ -92,8 +92,8 @@ public class Level2Gnome : MonoBehaviour
         MovePlayer1();
         if (energyBar1.slider.value <= 0)
         {
-            //loseScreen1.gameObject.SetActive(true);
-            //gameObject.SetActive(false);
+            loseScreen1.gameObject.SetActive(true);
+            gameObject.SetActive(false);
         }
         if (!facingRight1 && moveRight1)
         {
