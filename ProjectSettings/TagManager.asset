@@ -8,6 +8,11 @@ TagManager:
   - Tree
   - Enemy
   - Walls
+  - Poster
+  - SignBoard
+  - SB1
+  - SB2
+  - SB3
   layers:
   - Default
   - TransparentFX
