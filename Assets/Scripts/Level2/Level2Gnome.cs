@@ -39,6 +39,8 @@ public class Level2Gnome : MonoBehaviour
     public SpriteRenderer posterSpriteRend;
     public Sprite newPosterSprite;
     public GameObject poster;
+    private Vector3 signboardPos;
+    private GameObject collideSignboard;
 
 
     public bool moveLeft1;
@@ -107,6 +109,15 @@ public class Level2Gnome : MonoBehaviour
         rb1.velocity = new Vector2(horizontalMove1, rb1.velocity.y);
 
         animator1.SetFloat("PosX", Mathf.Abs(rb1.velocity.x * 10f));
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (collideSignboard != null && havePoster == true)
+            {
+                Destroy(collideSignboard);
+                Instantiate(poster, signboardPos, Quaternion.identity);
+            }
+        }
     }
     public bool isGrounded1()
     {
@@ -253,13 +264,9 @@ public class Level2Gnome : MonoBehaviour
 
         if (collision.gameObject.layer == 11)
         {
-            Debug.Log("urmother");
-
-            if (Input.GetButtonDown("E"))
-            {
-                Vector3 signboardpos = collision.gameObject.transform.position;
-                Instantiate(poster, signboardpos, Quaternion.identity);
-            }
+            Vector3 signboardpos = collision.gameObject.transform.position;
+            signboardPos = signboardpos;
+            collideSignboard = collision.gameObject;
         }
 
         //if (collision.gameObject.tag == "SignBoard" && havePoster == true)

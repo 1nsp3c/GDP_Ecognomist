@@ -23,19 +23,10 @@ public class SignBoards : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             signboardText.gameObject.SetActive(true);
-            Level2Gnome gnomeScript = collision.gameObject.GetComponent<Level2Gnome>();
-            bool poster = gnomeScript.havePoster;
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (poster == true)
-                {
-                    signboardText.gameObject.SetActive(false);
-                    Instantiate(signNposter, new Vector3(-52f, -1.75f, 0f), Quaternion.identity);
-
-                }
-            }
+            
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
