@@ -249,45 +249,53 @@ public class Level2Gnome : MonoBehaviour
         {
             Destroy(collision.gameObject);
             havePoster = true;
-            
-
         }
 
-        if (collision.gameObject.tag == "SignBoard" && havePoster == true)
+        if (collision.gameObject.layer == 11)
         {
-            print("gg");
-            Destroy(collision.gameObject);
-            //poster.SetActive(true);
-            Instantiate(poster, new Vector3(-51.08684f, -1.72f, -0.329512f), Quaternion.identity);
-            havePoster = false;
+            Debug.Log("urmother");
+
+            if (Input.GetButtonDown("E"))
+            {
+                Vector3 signboardpos = collision.gameObject.transform.position;
+                Instantiate(poster, signboardpos, Quaternion.identity);
+            }
         }
 
+        //if (collision.gameObject.tag == "SignBoard" && havePoster == true)
+        //{
+        //    print("gg");
+        //    Destroy(collision.gameObject);
+        //    //poster.SetActive(true);
+        //    Instantiate(poster, new Vector3(-51.08684f, -1.72f, -0.329512f), Quaternion.identity);
+        //    havePoster = false;
+        //}
 
-        if (collision.gameObject.tag == "SB1" && havePoster == true)
-        {
-            print("gg");
-            Destroy(collision.gameObject);
-            //poster.SetActive(true);
-            Instantiate(poster, new Vector3(-45.96f, -13.75f, -0.329512f), Quaternion.identity);
-            havePoster = false;
-        }
+        //if (collision.gameObject.tag == "SB1" && havePoster == true)
+        //{
+        //    print("gg");
+        //    Destroy(collision.gameObject);
+        //    //poster.SetActive(true);
+        //    Instantiate(poster, new Vector3(-45.96f, -13.75f, -0.329512f), Quaternion.identity);
+        //    havePoster = false;
+        //}
 
-        if (collision.gameObject.tag == "SB2" && havePoster == true)
-        {
-            print("gg");
-            Destroy(collision.gameObject);
-            //poster.SetActive(true);
-            Instantiate(poster, new Vector3(-3.4f, 21.3f, -0.329512f), Quaternion.identity);
-            havePoster = false;
-        }
+        //if (collision.gameObject.tag == "SB2" && havePoster == true)
+        //{
+        //    print("gg");
+        //    Destroy(collision.gameObject);
+        //    //poster.SetActive(true);
+        //    Instantiate(poster, new Vector3(-3.4f, 21.3f, -0.329512f), Quaternion.identity);
+        //    havePoster = false;
+        //}
 
-        if (collision.gameObject.tag == "SB3" && havePoster == true)
-        {
-            print("gg");
-            Destroy(collision.gameObject);
-            //poster.SetActive(true);
-            Instantiate(poster, new Vector3(7.3f, 6.4f, -0.329512f), Quaternion.identity);
-            havePoster = false;
-        }
+        //if (collision.gameObject.tag == "SB3" && havePoster == true)
+        //{
+        //    print("gg");
+        //    Destroy(collision.gameObject);
+        //    //poster.SetActive(true);
+        //    Instantiate(poster, new Vector3(7.3f, 6.4f, -0.329512f), Quaternion.identity);
+        //    havePoster = false;
+        //}
     }
 }
