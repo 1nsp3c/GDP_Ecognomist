@@ -2176,7 +2176,8 @@ GameObject:
   - component: {fileID: 423446115}
   - component: {fileID: 423446114}
   - component: {fileID: 423446113}
-  m_Layer: 0
+  - component: {fileID: 423446116}
+  m_Layer: 11
   m_Name: SignBoard (2)
   m_TagString: SB3
   m_Icon: {fileID: 0}
@@ -2193,7 +2194,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.28712463, y: -0.22332191}
@@ -2277,6 +2278,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &423446116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423446112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d41116c0e00a14e8791a54c41f59c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posterNSignboard: {fileID: 21300000, guid: f0186804c28892c41b5873a1fffbaf29, type: 3}
 --- !u!1 &429567001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2662,7 +2676,7 @@ GameObject:
   - component: {fileID: 513961873}
   - component: {fileID: 513961872}
   - component: {fileID: 513961871}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2984,7 +2998,8 @@ GameObject:
   - component: {fileID: 547823721}
   - component: {fileID: 547823720}
   - component: {fileID: 547823719}
-  m_Layer: 0
+  - component: {fileID: 547823722}
+  m_Layer: 11
   m_Name: SignBoard (3)
   m_TagString: SB2
   m_Icon: {fileID: 0}
@@ -3001,7 +3016,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.28712463, y: -0.22332191}
@@ -3085,6 +3100,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &547823722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547823718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d41116c0e00a14e8791a54c41f59c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posterNSignboard: {fileID: 21300000, guid: f0186804c28892c41b5873a1fffbaf29, type: 3}
 --- !u!1 &585021704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4870,7 +4898,8 @@ GameObject:
   - component: {fileID: 846791601}
   - component: {fileID: 846791600}
   - component: {fileID: 846791599}
-  m_Layer: 0
+  - component: {fileID: 846791602}
+  m_Layer: 11
   m_Name: SignBoard (1)
   m_TagString: SB1
   m_Icon: {fileID: 0}
@@ -4887,7 +4916,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.28712463, y: -0.22332191}
@@ -4971,6 +5000,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &846791602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846791598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d41116c0e00a14e8791a54c41f59c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posterNSignboard: {fileID: 21300000, guid: f0186804c28892c41b5873a1fffbaf29, type: 3}
 --- !u!1 &868569311
 GameObject:
   m_ObjectHideFlags: 0
@@ -6108,7 +6150,7 @@ GameObject:
   - component: {fileID: 1035976917}
   - component: {fileID: 1035976916}
   - component: {fileID: 1035976918}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Press E When Close Trigger (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8241,7 +8283,7 @@ GameObject:
   - component: {fileID: 1420695535}
   - component: {fileID: 1420695534}
   - component: {fileID: 1420695536}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8397,7 +8439,7 @@ GameObject:
   - component: {fileID: 1421745413}
   - component: {fileID: 1421745412}
   - component: {fileID: 1421745411}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8756,7 +8798,7 @@ GameObject:
   - component: {fileID: 1487220552}
   - component: {fileID: 1487220551}
   - component: {fileID: 1487220550}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8990,7 +9032,7 @@ GameObject:
   - component: {fileID: 1508761530}
   - component: {fileID: 1508761529}
   - component: {fileID: 1508761528}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11886,7 +11928,7 @@ GameObject:
   - component: {fileID: 1993598847}
   - component: {fileID: 1993598846}
   - component: {fileID: 1993598845}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12062,6 +12104,7 @@ GameObject:
   - component: {fileID: 2043658181}
   - component: {fileID: 2043658180}
   - component: {fileID: 2043658179}
+  - component: {fileID: 2043658182}
   m_Layer: 11
   m_Name: SignBoard
   m_TagString: SignBoard
@@ -12079,7 +12122,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.32091904, y: -0.4111433}
@@ -12163,6 +12206,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043658182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043658178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d41116c0e00a14e8791a54c41f59c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posterNSignboard: {fileID: 21300000, guid: f0186804c28892c41b5873a1fffbaf29, type: 3}
 --- !u!1 &2050272069
 GameObject:
   m_ObjectHideFlags: 0
@@ -12175,7 +12231,7 @@ GameObject:
   - component: {fileID: 2050272071}
   - component: {fileID: 2050272072}
   - component: {fileID: 2050272073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Press E When Close Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12428,7 +12484,7 @@ GameObject:
   - component: {fileID: 2085030401}
   - component: {fileID: 2085030400}
   - component: {fileID: 2085030402}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Press E When Close Trigger (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

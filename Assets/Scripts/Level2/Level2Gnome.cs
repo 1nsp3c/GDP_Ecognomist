@@ -116,6 +116,7 @@ public class Level2Gnome : MonoBehaviour
             {
                 Destroy(collideSignboard);
                 Instantiate(poster, signboardPos, Quaternion.identity);
+                havePoster = false;
             }
         }
     }
