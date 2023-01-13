@@ -2275,7 +2275,7 @@ Transform:
   m_Children:
   - {fileID: 1035976915}
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &429567001
 GameObject:
@@ -2566,6 +2566,7 @@ GameObject:
   - component: {fileID: 509759156}
   - component: {fileID: 509759158}
   - component: {fileID: 509759157}
+  - component: {fileID: 509759159}
   m_Layer: 0
   m_Name: Press E When Close Trigger (1)
   m_TagString: Untagged
@@ -2635,6 +2636,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.323463, y: 15.81805}
   m_EdgeRadius: 0
+--- !u!114 &509759159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509759155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b824f4cb6268f784da9bf11c21c0ca46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signboardText: {fileID: 300351264}
 --- !u!1 &513961869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,7 +3082,7 @@ Transform:
   m_Children:
   - {fileID: 2085030399}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585021704
 GameObject:
@@ -4249,7 +4263,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &741127728
 GameObject:
@@ -4797,7 +4811,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &842252885
 GameObject:
@@ -4954,7 +4968,7 @@ Transform:
   m_Children:
   - {fileID: 2050272070}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &868569311
 GameObject:
@@ -6092,6 +6106,7 @@ GameObject:
   - component: {fileID: 1035976915}
   - component: {fileID: 1035976917}
   - component: {fileID: 1035976916}
+  - component: {fileID: 1035976918}
   m_Layer: 0
   m_Name: Press E When Close Trigger (1)
   m_TagString: Untagged
@@ -6161,6 +6176,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.323463, y: 15.81805}
   m_EdgeRadius: 0
+--- !u!114 &1035976918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035976914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b824f4cb6268f784da9bf11c21c0ca46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signboardText: {fileID: 1508761529}
 --- !u!1 &1036620186
 GameObject:
   m_ObjectHideFlags: 0
@@ -12144,6 +12172,7 @@ GameObject:
   - component: {fileID: 2050272070}
   - component: {fileID: 2050272071}
   - component: {fileID: 2050272072}
+  - component: {fileID: 2050272073}
   m_Layer: 0
   m_Name: Press E When Close Trigger
   m_TagString: Untagged
@@ -12213,6 +12242,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2050272073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050272069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b824f4cb6268f784da9bf11c21c0ca46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signboardText: {fileID: 1420695534}
 --- !u!1 &2076306535
 GameObject:
   m_ObjectHideFlags: 0
@@ -12382,6 +12424,7 @@ GameObject:
   - component: {fileID: 2085030399}
   - component: {fileID: 2085030401}
   - component: {fileID: 2085030400}
+  - component: {fileID: 2085030402}
   m_Layer: 0
   m_Name: Press E When Close Trigger (2)
   m_TagString: Untagged
@@ -12451,6 +12494,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.323463, y: 15.81805}
   m_EdgeRadius: 0
+--- !u!114 &2085030402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085030398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b824f4cb6268f784da9bf11c21c0ca46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signboardText: {fileID: 513961872}
 --- !u!1 &2085141314
 GameObject:
   m_ObjectHideFlags: 0
