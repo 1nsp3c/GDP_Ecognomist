@@ -41,6 +41,7 @@ public class Level2Gnome : MonoBehaviour
     public GameObject poster;
     private Vector3 signboardPos;
     private GameObject collideSignboard;
+    private int postNSignCount;
 
 
     public bool moveLeft1;
@@ -117,7 +118,14 @@ public class Level2Gnome : MonoBehaviour
                 Destroy(collideSignboard);
                 Instantiate(poster, signboardPos, Quaternion.identity);
                 havePoster = false;
+                postNSignCount += 1; 
             }
+        }
+
+        if (postNSignCount >= 4)
+        {
+            WinScreen1.SetActive(true);
+            Time.timeScale = 0;
         }
     }
     public bool isGrounded1()
