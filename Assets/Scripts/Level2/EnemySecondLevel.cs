@@ -27,11 +27,26 @@ public class EnemySecondLevel : MonoBehaviour
     [SerializeField]
     private LayerMask visibilityLayer;
 
-    public Tree[] treeList;
     public GameObject tree;
+    public GameObject treeFire;
+    public GameObject tree1;
+    public GameObject treeFire1;
+    public GameObject tree2;
+    public GameObject treeFire2;
+    public GameObject tree3;
+    public GameObject treeFire3;
+    public GameObject tree4;
+    public GameObject treeFire4;
+    public GameObject tree5;
+    public GameObject treeFire5;
     public Level2Gnome level2Gnome;
 
-    public Signboard signboard3;
+    public GameObject enemy;
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public GameObject enemy3;
+    public GameObject enemy4;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +56,14 @@ public class EnemySecondLevel : MonoBehaviour
         canShoot = true;
         bodyCollider = GetComponent<CapsuleCollider2D>();
         player = FindObjectOfType<Level2Gnome>();
-        //energyBar.SetMaxEnergy(30);
+
+
         Physics2D.IgnoreLayerCollision(7, 9);
-        treeList = FindObjectsOfType<Tree>();
+        
         level2Gnome = GetComponent<Level2Gnome>();
 
         Physics2D.IgnoreLayerCollision(7, 10);
-        //Physics2D.IgnoreLayerCollision(7, 11);
+        StartCoroutine(SpawnEnemies());
     }
     private void FixedUpdate()
     {
@@ -111,6 +127,25 @@ public class EnemySecondLevel : MonoBehaviour
         canShoot = true;
 
     }
+    IEnumerator SpawnEnemies() 
+    {
+        
+        enemy.SetActive(true);
+        yield return new WaitForSeconds(10);
+        enemy1.SetActive(true);
+        yield return new WaitForSeconds(10);
+        enemy2.SetActive(true);
+        yield return new WaitForSeconds(10);
+        enemy3.SetActive(true);
+        yield return new WaitForSeconds(10);
+        enemy4.SetActive(true);
+        yield return new WaitForSeconds(10);
+        
+    }
+    private void Disable() 
+    {
+        gameObject.SetActive(false);
+    }
     private bool CheckTargetVisible()
     {
         //check the visibility of the player or children
@@ -124,10 +159,53 @@ public class EnemySecondLevel : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Tree")
+        if (collision.gameObject.name == "Tree")
         {
             tree.gameObject.SetActive(false);
-            //treeFire.SetActive(true);
+            treeFire.SetActive(true);
+            animator.SetBool("Fire", true);
+            patrol = false;
+            Invoke("Disable", 1.5f);
+        }
+        if (collision.gameObject.name == "Tree1")
+        {
+            tree1.gameObject.SetActive(false);
+            treeFire1.SetActive(true);
+            animator.SetBool("Fire", true);
+            patrol = false;
+            Invoke("Disable", 1.5f);
+        }
+        if (collision.gameObject.name == "Tree2")
+        {
+            tree2.gameObject.SetActive(false);
+            treeFire2.SetActive(true);
+            animator.SetBool("Fire", true);
+            patrol = false;
+            Invoke("Disable", 1.5f);
+        }
+        if (collision.gameObject.name == "Tree3")
+        {
+            tree3.gameObject.SetActive(false);
+            treeFire3.SetActive(true);
+            animator.SetBool("Fire", true);
+            patrol = false;
+            Invoke("Disable", 1.5f);
+        }
+        if (collision.gameObject.name == "Tree4")
+        {
+            tree4.gameObject.SetActive(false);
+            treeFire4.SetActive(true);
+            animator.SetBool("Fire", true);
+            patrol = false;
+            Invoke("Disable", 1.5f);
+        }
+        if (collision.gameObject.name == "Tree5")
+        {
+            tree5.gameObject.SetActive(false);
+            treeFire5.SetActive(true);
+            animator.SetBool("Fire", true);
+            patrol = false;
+            Invoke("Disable", 1.5f);
         }
 
         if (collision.gameObject.tag == "Finish") 
@@ -135,9 +213,14 @@ public class EnemySecondLevel : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (collision.gameObject.name == "SignBoard (3)")
+        if (collision.gameObject.layer == 11)
         {
-            signboard3.boxCollider2D.enabled = false;
+            Signboard signboard = GetComponent<Signboard>();
+            bool checkSignboard = signboard.yesPoster;
+            Debug.Log("a");
+            if (checkSignboard == false)
+                signboard.boxCollider2D.enabled = false;
+                
         }
        
     }

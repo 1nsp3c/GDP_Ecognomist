@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8310659151908741789
 Transform:
   m_ObjectHideFlags: 0
@@ -170,10 +170,25 @@ MonoBehaviour:
   visibilityLayer:
     serializedVersion: 2
     m_Bits: 1032
-  treeList: []
   tree: {fileID: 0}
+  treeFire: {fileID: 0}
+  tree1: {fileID: 0}
+  treeFire1: {fileID: 0}
+  tree2: {fileID: 0}
+  treeFire2: {fileID: 0}
+  tree3: {fileID: 0}
+  treeFire3: {fileID: 0}
+  tree4: {fileID: 0}
+  treeFire4: {fileID: 0}
+  tree5: {fileID: 0}
+  treeFire5: {fileID: 0}
   level2Gnome: {fileID: 0}
-  signboard3: {fileID: 0}
+  enemy: {fileID: 8310659151908741760}
+  enemy1: {fileID: 0}
+  enemy2: {fileID: 0}
+  enemy3: {fileID: 0}
+  enemy4: {fileID: 0}
+  animator: {fileID: 8310659151908741790}
 --- !u!95 &8310659151908741790
 Animator:
   serializedVersion: 4

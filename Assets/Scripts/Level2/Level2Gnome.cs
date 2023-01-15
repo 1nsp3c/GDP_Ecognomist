@@ -116,14 +116,15 @@ public class Level2Gnome : MonoBehaviour
         {
             if (collideSignboard != null && havePoster == true)
             {
-                Debug.Log("urmom");
                 Signboard signboard = collideSignboard.GetComponent<Signboard>();
                 inRange = signboard.inRange;
                 if (inRange)
                 {
-                    Instantiate(poster, new Vector3(signboardPos.x - 0.1f, signboardPos.y + 0.15f, signboardPos.z), Quaternion.identity);
+                    //Instantiate(poster, new Vector3(signboardPos.x - 0.1f, signboardPos.y + 0.15f, signboardPos.z), Quaternion.identity);
                     havePoster = false;
                     signboard.yesPoster = true;
+                    Destroy(collideSignboard);
+                    Instantiate(poster, signboardPos, Quaternion.identity);
                 }
             }
         }
