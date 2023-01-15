@@ -27,8 +27,11 @@ public class EnemySecondLevel : MonoBehaviour
     [SerializeField]
     private LayerMask visibilityLayer;
 
+    public Tree[] treeList;
     public GameObject tree;
-    public GameObject treeFire;
+    public Level2Gnome level2Gnome;
+
+    public Signboard signboard3;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +41,13 @@ public class EnemySecondLevel : MonoBehaviour
         canShoot = true;
         bodyCollider = GetComponent<CapsuleCollider2D>();
         player = FindObjectOfType<Level2Gnome>();
-        energyBar.SetMaxEnergy(30);
+        //energyBar.SetMaxEnergy(30);
         Physics2D.IgnoreLayerCollision(7, 9);
+        treeList = FindObjectsOfType<Tree>();
+        level2Gnome = GetComponent<Level2Gnome>();
+
+        Physics2D.IgnoreLayerCollision(7, 10);
+        //Physics2D.IgnoreLayerCollision(7, 11);
     }
     private void FixedUpdate()
     {
@@ -57,7 +65,7 @@ public class EnemySecondLevel : MonoBehaviour
         }
         TargetVisible = CheckTargetVisible();
 
-        float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        /*float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (distToPlayer <= range && TargetVisible == true)
         {
@@ -70,13 +78,13 @@ public class EnemySecondLevel : MonoBehaviour
 
             if (canShoot) 
             {
-                StartCoroutine(Shoot());
+                //StartCoroutine(Shoot());
             }
         }
         else 
         {
             patrol = true;
-        }
+        }*/
     }
     void Patrol()
     {
@@ -116,13 +124,24 @@ public class EnemySecondLevel : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Tree") 
+        if (collision.gameObject.tag == "Tree")
         {
-            tree.SetActive(false);
-            treeFire.SetActive(true);
+            tree.gameObject.SetActive(false);
+            //treeFire.SetActive(true);
         }
+
+        if (collision.gameObject.tag == "Finish") 
+        {
+            gameObject.SetActive(false);
+        }
+
+        if (collision.gameObject.name == "SignBoard (3)")
+        {
+            signboard3.boxCollider2D.enabled = false;
+        }
+       
     }
-    public void TakeDamageFire(float amount) 
+    /*public void TakeDamageFire(float amount) 
     {
         energyBar.slider.value -= amount;
         if (energyBar.slider.value <= 0)
@@ -130,5 +149,5 @@ public class EnemySecondLevel : MonoBehaviour
             Destroy(gameObject);
         }
         print("Took dmg");
-    }
+    }*/
 }

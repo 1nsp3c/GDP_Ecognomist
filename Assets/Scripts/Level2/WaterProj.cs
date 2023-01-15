@@ -18,7 +18,7 @@ public class WaterProj : MonoBehaviour
         EnemySecondLevel enemy = collision.gameObject.GetComponent<EnemySecondLevel>();
         if (enemy != null)
         {
-            enemy.TakeDamageFire(damage);
+            //enemy.TakeDamageFire(damage);
             Die();
         }
         if (collision.gameObject.tag == "Walls")

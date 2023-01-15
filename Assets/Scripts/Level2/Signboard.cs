@@ -6,10 +6,12 @@ public class Signboard : MonoBehaviour
 {
     public Sprite posterNSignboard;
     private SpriteRenderer spriteRenderer;
+    public BoxCollider2D boxCollider2D;
 
     private void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     //private void OnCollisionEnter(Collider other)
