@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class SignBoards : MonoBehaviour
+public class SignBoardText : MonoBehaviour
 {
     public TextMeshProUGUI signboardText;
-    public GameObject signNposter;
+    public Signboard Signboard; //takes respective signboard
     // Start is called before the first frame update
     void Start()
     {
         signboardText.gameObject.SetActive(false);
+        Signboard = gameObject.GetComponentInParent<Signboard>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class SignBoards : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             signboardText.gameObject.SetActive(true);
-            
+            Signboard.inRange = true;
         }
     }
 
@@ -32,6 +33,7 @@ public class SignBoards : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             signboardText.gameObject.SetActive(false);
+            Signboard.inRange = false;
         }
     }
 }

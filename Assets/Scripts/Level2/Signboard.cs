@@ -8,6 +8,9 @@ public class Signboard : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public BoxCollider2D boxCollider2D;
 
+    public bool inRange = false; //whether player is in range
+    public bool yesPoster = false; //whether the signboard has a poster
+
     private void Start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();

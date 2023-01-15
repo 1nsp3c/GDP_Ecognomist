@@ -36,11 +36,12 @@ public class Level2Gnome : MonoBehaviour
     public LayerMask groundLayer1;
     public Image fill1;
     public SpriteRenderer playerSpriteRend;
-    public SpriteRenderer posterSpriteRend;
-    public Sprite newPosterSprite;
+
+    [Header("Signboard")] 
     public GameObject poster;
     private Vector3 signboardPos;
     private GameObject collideSignboard;
+    private bool inRange = false;
     private int postNSignCount;
 
 
@@ -115,17 +116,16 @@ public class Level2Gnome : MonoBehaviour
         {
             if (collideSignboard != null && havePoster == true)
             {
-                Destroy(collideSignboard);
-                Instantiate(poster, signboardPos, Quaternion.identity);
-                havePoster = false;
-                postNSignCount += 1; 
+                Debug.Log("urmom");
+                Signboard signboard = collideSignboard.GetComponent<Signboard>();
+                inRange = signboard.inRange;
+                if (inRange)
+                {
+                    Instantiate(poster, new Vector3(signboardPos.x - 0.1f, signboardPos.y + 0.15f, signboardPos.z), Quaternion.identity);
+                    havePoster = false;
+                    signboard.yesPoster = true;
+                }
             }
-        }
-
-        if (postNSignCount >= 4)
-        {
-            WinScreen1.SetActive(true);
-            Time.timeScale = 0;
         }
     }
     public bool isGrounded1()
@@ -271,7 +271,7 @@ public class Level2Gnome : MonoBehaviour
             havePoster = true;
         }
 
-        if (collision.gameObject.layer == 11)
+        if (collision.gameObject.layer == 11) //If collide with signboard
         {
             Vector3 signboardpos = collision.gameObject.transform.position;
             signboardPos = signboardpos;
