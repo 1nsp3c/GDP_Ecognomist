@@ -80,27 +80,6 @@ public class EnemySecondLevel : MonoBehaviour
             Patrol();
         }
         TargetVisible = CheckTargetVisible();
-
-        /*float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
-
-        if (distToPlayer <= range && TargetVisible == true)
-        {
-            if (player.transform.position.x > transform.position.x && transform.localScale.x < 0 || player.transform.position.x < transform.position.x && transform.localScale.x > 0) 
-            {
-                Flip();
-            }
-            patrol = false;
-            rb2d.velocity = Vector2.zero;
-
-            if (canShoot) 
-            {
-                //StartCoroutine(Shoot());
-            }
-        }
-        else 
-        {
-            patrol = true;
-        }*/
     }
     void Patrol()
     {
@@ -117,15 +96,6 @@ public class EnemySecondLevel : MonoBehaviour
         walkSpeed *= -1;
         patrol = true;
         bullet.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-    }
-    IEnumerator Shoot()
-    {
-        canShoot = false;
-        yield return new WaitForSeconds(timeBetweenShots);
-        GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
-        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed * walkSpeed * Time.fixedDeltaTime, 0);
-        canShoot = true;
-
     }
     IEnumerator SpawnEnemies() 
     {
@@ -224,13 +194,5 @@ public class EnemySecondLevel : MonoBehaviour
         }
        
     }
-    /*public void TakeDamageFire(float amount) 
-    {
-        energyBar.slider.value -= amount;
-        if (energyBar.slider.value <= 0)
-        {
-            Destroy(gameObject);
-        }
-        print("Took dmg");
-    }*/
+
 }
