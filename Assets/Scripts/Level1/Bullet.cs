@@ -16,16 +16,10 @@ public class Bullet : MonoBehaviour
     {
         GnomeMovement gnomeMovement = collision.gameObject.GetComponent<GnomeMovement>();
         Level2Gnome level2Gnome = collision.gameObject.GetComponent<Level2Gnome>();
-        TreeHealth treeHealth = collision.gameObject.GetComponent<TreeHealth>();
 
         if (gnomeMovement != null)
         {
             gnomeMovement.TakeDamage(damage);
-            Die();
-        }
-        if (treeHealth != null)
-        {
-            treeHealth.TakeDamage(damage);
             Die();
         }
         if (level2Gnome != null)

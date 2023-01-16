@@ -16,16 +16,16 @@ public class EnemySecondLevel : MonoBehaviour
     public GameObject bullet;
     public Transform shootPos;
     Level2Gnome player;
+    Level2TempBar level2TempBar;
     public bool mustFlip;
     public Transform groundCheck;
     public LayerMask groundLayer;
     public EnergyBar energyBar;
+    public GameObject winScreen;
     public bool TargetVisible { get; private set; }
     [SerializeField]
     private LayerMask playerLayerMask;
 
-    [SerializeField]
-    private LayerMask visibilityLayer;
 
     public GameObject tree;
     public GameObject treeFire;
@@ -51,6 +51,7 @@ public class EnemySecondLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        level2TempBar = FindObjectOfType<Level2TempBar>();
         rb2d = GetComponent<Rigidbody2D>();
         patrol = true;
         canShoot = true;
@@ -63,7 +64,7 @@ public class EnemySecondLevel : MonoBehaviour
         level2Gnome = GetComponent<Level2Gnome>();
 
         Physics2D.IgnoreLayerCollision(7, 10);
-        StartCoroutine(SpawnEnemies());
+        //StartCoroutine(SpawnEnemies());
     }
     private void FixedUpdate()
     {
@@ -79,7 +80,7 @@ public class EnemySecondLevel : MonoBehaviour
         {
             Patrol();
         }
-        TargetVisible = CheckTargetVisible();
+
     }
     void Patrol()
     {
@@ -100,7 +101,7 @@ public class EnemySecondLevel : MonoBehaviour
     IEnumerator SpawnEnemies() 
     {
         
-        enemy.SetActive(true);
+        //enemy.SetActive(true);
         yield return new WaitForSeconds(10);
         enemy1.SetActive(true);
         yield return new WaitForSeconds(10);
@@ -116,17 +117,6 @@ public class EnemySecondLevel : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-    private bool CheckTargetVisible()
-    {
-        //check the visibility of the player or children
-        var result = Physics2D.Raycast(transform.position, player.transform.position - transform.position, 11, visibilityLayer);
-        if (result.collider != null)
-        {
-            //this will let the zombies not able to detect the player or children who are behind the walls
-            return (playerLayerMask & (1 << result.collider.gameObject.layer)) != 0;
-        }
-        return false;
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Tree")
@@ -136,6 +126,8 @@ public class EnemySecondLevel : MonoBehaviour
             animator.SetBool("Fire", true);
             patrol = false;
             Invoke("Disable", 1.5f);
+            level2TempBar.AddValue();
+            player.slider.value -= 10;
         }
         if (collision.gameObject.name == "Tree1")
         {
@@ -144,6 +136,8 @@ public class EnemySecondLevel : MonoBehaviour
             animator.SetBool("Fire", true);
             patrol = false;
             Invoke("Disable", 1.5f);
+            level2TempBar.AddValue();
+            player.slider.value -= 10;
         }
         if (collision.gameObject.name == "Tree2")
         {
@@ -152,6 +146,8 @@ public class EnemySecondLevel : MonoBehaviour
             animator.SetBool("Fire", true);
             patrol = false;
             Invoke("Disable", 1.5f);
+            level2TempBar.AddValue();
+            player.slider.value -= 10;
         }
         if (collision.gameObject.name == "Tree3")
         {
@@ -160,6 +156,8 @@ public class EnemySecondLevel : MonoBehaviour
             animator.SetBool("Fire", true);
             patrol = false;
             Invoke("Disable", 1.5f);
+            level2TempBar.AddValue();
+            player.slider.value -= 10;
         }
         if (collision.gameObject.name == "Tree4")
         {
@@ -168,17 +166,14 @@ public class EnemySecondLevel : MonoBehaviour
             animator.SetBool("Fire", true);
             patrol = false;
             Invoke("Disable", 1.5f);
+            level2TempBar.AddValue();
+            player.slider.value -= 10;
+            if(player.slider.value != 0)
+            {
+                winScreen.SetActive(true);
+            }
         }
-        if (collision.gameObject.name == "Tree5")
-        {
-            tree5.gameObject.SetActive(false);
-            treeFire5.SetActive(true);
-            animator.SetBool("Fire", true);
-            patrol = false;
-            Invoke("Disable", 1.5f);
-        }
-
-        if (collision.gameObject.tag == "Finish") 
+        if (collision.gameObject.tag == "Finish")
         {
             gameObject.SetActive(false);
         }

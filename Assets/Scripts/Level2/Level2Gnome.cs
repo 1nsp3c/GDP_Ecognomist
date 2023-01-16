@@ -52,6 +52,7 @@ public class Level2Gnome : MonoBehaviour
     public GameObject WinScreen1;
     public GameObject loseScreen1;
     private Enemy enemy1;
+    public GameObject enemySpawner;
 
     public float damageCooldown1;
     [HideInInspector] public float damageTimer1;
@@ -84,6 +85,7 @@ public class Level2Gnome : MonoBehaviour
         WinScreen1.gameObject.SetActive(false);
         waterSprite.flipX = true;
         enemy1 = GetComponent<Enemy>();
+        Physics2D.IgnoreLayerCollision(0, 10);
         //poster.SetActive(false);
     }
 
@@ -98,6 +100,7 @@ public class Level2Gnome : MonoBehaviour
         {
             loseScreen1.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            enemySpawner.SetActive(false);
         }
         if (!facingRight1 && moveRight1)
         {

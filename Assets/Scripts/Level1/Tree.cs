@@ -33,7 +33,6 @@ public class Tree : MonoBehaviour
             extinguish = true;
             level2Gnome.AddEnergy1(6);
             boxCollider2D.enabled = false;
-            level2TempBar.ResetSlider();
             animator.SetBool("extinguished", extinguish);
         }
     }
