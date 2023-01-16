@@ -37,8 +37,8 @@ public class EnemySecondLevel : MonoBehaviour
     public GameObject treeFire3;
     public GameObject tree4;
     public GameObject treeFire4;
-    public GameObject tree5;
-    public GameObject treeFire5;
+    //public GameObject tree5;
+    //public GameObject treeFire5;
     public Level2Gnome level2Gnome;
 
     public GameObject enemy;

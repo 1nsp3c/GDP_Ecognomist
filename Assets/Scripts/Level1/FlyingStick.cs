@@ -24,6 +24,10 @@ public class FlyingStick : MonoBehaviour
         {
             Die();
         }
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(collision.gameObject);
+        }
     }
     IEnumerator CountDownTimer()
     {
