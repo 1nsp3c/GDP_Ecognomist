@@ -85,7 +85,7 @@ public class Level2Gnome : MonoBehaviour
         WinScreen1.gameObject.SetActive(false);
         waterSprite.flipX = true;
         enemy1 = GetComponent<Enemy>();
-        Physics2D.IgnoreLayerCollision(0, 10);
+        Physics2D.IgnoreLayerCollision(9, 10);
         //poster.SetActive(false);
     }
 
@@ -115,22 +115,19 @@ public class Level2Gnome : MonoBehaviour
 
         animator1.SetFloat("PosX", Mathf.Abs(rb1.velocity.x * 10f));
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (collideSignboard != null && havePoster == true)
-            {
-                Signboard signboard = collideSignboard.GetComponent<Signboard>();
-                inRange = signboard.inRange;
-                if (inRange)
-                {
-                    //Instantiate(poster, new Vector3(signboardPos.x - 0.1f, signboardPos.y + 0.15f, signboardPos.z), Quaternion.identity);
-                    havePoster = false;
-                    signboard.yesPoster = true;
-                    Destroy(collideSignboard);
-                    Instantiate(poster, signboardPos, Quaternion.identity);
-                }
-            }
-        }
+        //if (collideSignboard != null && havePoster == true)
+        //{
+        //    Signboard signboard = collideSignboard.GetComponent<Signboard>();
+        //    inRange = signboard.inRange;
+        //    if (inRange)
+        //    {
+        //        //Instantiate(poster, new Vector3(signboardPos.x - 0.1f, signboardPos.y + 0.15f, signboardPos.z), Quaternion.identity);
+        //        havePoster = false;
+        //        signboard.yesPoster = true;
+        //        Destroy(collideSignboard);
+        //        Instantiate(poster, signboardPos, Quaternion.identity);
+        //    }
+        //}
     }
     public bool isGrounded1()
     {
@@ -207,7 +204,19 @@ public class Level2Gnome : MonoBehaviour
     }
     public void PlayerAttack1()
     {
-        StartCoroutine(Shoot1());
+        if (collideSignboard != null && havePoster == true)
+        {
+            Signboard signboard = collideSignboard.GetComponent<Signboard>();
+            inRange = signboard.inRange;
+            if (inRange)
+            {
+                //Instantiate(poster, new Vector3(signboardPos.x - 0.1f, signboardPos.y + 0.15f, signboardPos.z), Quaternion.identity);
+                havePoster = false;
+                signboard.yesPoster = true;
+                Destroy(collideSignboard);
+                Instantiate(poster, signboardPos, Quaternion.identity);
+            }
+        }
     }
     IEnumerator Shoot1()
     {

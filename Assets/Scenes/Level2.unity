@@ -4169,7 +4169,7 @@ GameObject:
   - component: {fileID: 588324666}
   - component: {fileID: 588324668}
   - component: {fileID: 588324669}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree3
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -4799,7 +4799,7 @@ GameObject:
   - component: {fileID: 685276011}
   - component: {fileID: 685276013}
   - component: {fileID: 685276014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree2
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -5274,7 +5274,7 @@ GameObject:
   - component: {fileID: 833264159}
   - component: {fileID: 833264161}
   - component: {fileID: 833264162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -6979,7 +6979,7 @@ GameObject:
   - component: {fileID: 1108517232}
   - component: {fileID: 1108517234}
   - component: {fileID: 1108517235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree1
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -10352,11 +10352,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1468432545, guid: 2e6352fa16cae2742935a92b9485f316, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -1666374108, guid: cf9ffa674dcc27e42a6a17cacd1851df, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -11955,7 +11955,7 @@ GameObject:
   - component: {fileID: 1760857262}
   - component: {fileID: 1760857264}
   - component: {fileID: 1760857265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tree4
   m_TagString: Tree
   m_Icon: {fileID: 0}

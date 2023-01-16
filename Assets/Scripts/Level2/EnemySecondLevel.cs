@@ -59,7 +59,7 @@ public class EnemySecondLevel : MonoBehaviour
         player = FindObjectOfType<Level2Gnome>();
 
 
-        Physics2D.IgnoreLayerCollision(7, 9);
+        //Physics2D.IgnoreLayerCollision(7, 9);
         
         level2Gnome = GetComponent<Level2Gnome>();
 
