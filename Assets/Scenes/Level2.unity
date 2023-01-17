@@ -2296,6 +2296,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 547823722}
     - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
+      propertyPath: level2Gnome
+      value: 
+      objectReference: {fileID: 1307802644}
+    - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
       propertyPath: enemies.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -4058,6 +4062,10 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 842252885}
+    - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
+      propertyPath: level2Gnome
+      value: 
+      objectReference: {fileID: 1307802644}
     - target: {fileID: 8310659151908741789, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5720,7 +5728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &842252886
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7848,6 +7856,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 547823722}
     - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
+      propertyPath: level2Gnome
+      value: 
+      objectReference: {fileID: 1307802644}
+    - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
       propertyPath: enemies.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -8708,7 +8720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1809252964277795740, guid: e17c0c8da818ae04393c1efd1f5f4787, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.8
+      value: 25.4
       objectReference: {fileID: 0}
     - target: {fileID: 1809252964277795740, guid: e17c0c8da818ae04393c1efd1f5f4787, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9218,6 +9230,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 547823722}
     - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
+      propertyPath: level2Gnome
+      value: 
+      objectReference: {fileID: 1307802644}
+    - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
       propertyPath: enemies.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -9623,6 +9639,10 @@ PrefabInstance:
       propertyPath: signboard3
       value: 
       objectReference: {fileID: 547823722}
+    - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
+      propertyPath: level2Gnome
+      value: 
+      objectReference: {fileID: 1307802644}
     - target: {fileID: 8310659151908741761, guid: b10582d9a81bfe14f8fae3ea4d1f3a3b, type: 3}
       propertyPath: enemies.Array.size
       value: 5

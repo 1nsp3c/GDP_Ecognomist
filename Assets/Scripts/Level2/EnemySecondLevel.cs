@@ -98,21 +98,6 @@ public class EnemySecondLevel : MonoBehaviour
         patrol = true;
         bullet.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
-    //IEnumerator SpawnEnemies() 
-    //{
-        
-    //    //enemy.SetActive(true);
-    //    yield return new WaitForSeconds(10);
-    //    enemy1.SetActive(true);
-    //    yield return new WaitForSeconds(10);
-    //    enemy2.SetActive(true);
-    //    yield return new WaitForSeconds(10);
-    //    enemy3.SetActive(true);
-    //    yield return new WaitForSeconds(10);
-    //    enemy4.SetActive(true);
-    //    yield return new WaitForSeconds(10);
-        
-    //}
     private void Disable() 
     {
         gameObject.SetActive(false);
@@ -187,7 +172,7 @@ public class EnemySecondLevel : MonoBehaviour
                 signboard.boxCollider2D.enabled = false;
                 
         }
-       
+
     }
 
 }
