@@ -269,6 +269,9 @@ public class Level2Gnome : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         playerSpriteRend.color = Color.white;
         yield return new WaitForSeconds(0.2f);
+    }
+    public void PlayerTakeDmg()
+    {
         StartCoroutine(FlashRed());
     }
     private void OnCollisionEnter2D(Collision2D collision)
