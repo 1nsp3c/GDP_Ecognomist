@@ -39,7 +39,7 @@ public class Cutscene : MonoBehaviour
         player = FindObjectOfType<Level2Gnome>();
 
 
-        Physics2D.IgnoreLayerCollision(7, 9);
+        //Physics2D.IgnoreLayerCollision(7, 9);
 
         level2Gnome = GetComponent<Level2Gnome>();
 
@@ -97,7 +97,7 @@ public class Cutscene : MonoBehaviour
         if (collision.gameObject.tag == "Finish")
         {
             gameObject.SetActive(false);
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene(3);
         }
 
         if (collision.gameObject.layer == 11)

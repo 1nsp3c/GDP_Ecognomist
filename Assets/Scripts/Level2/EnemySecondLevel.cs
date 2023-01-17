@@ -41,11 +41,11 @@ public class EnemySecondLevel : MonoBehaviour
     //public GameObject treeFire5;
     public Level2Gnome level2Gnome;
 
-    public GameObject enemy;
-    public GameObject enemy1;
-    public GameObject enemy2;
-    public GameObject enemy3;
-    public GameObject enemy4;
+    //public GameObject enemy;
+    //public GameObject enemy1;
+    //public GameObject enemy2;
+    //public GameObject enemy3;
+    //public GameObject enemy4;
     public Animator animator;
 
     // Start is called before the first frame update
@@ -98,21 +98,21 @@ public class EnemySecondLevel : MonoBehaviour
         patrol = true;
         bullet.transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
     }
-    IEnumerator SpawnEnemies() 
-    {
+    //IEnumerator SpawnEnemies() 
+    //{
         
-        //enemy.SetActive(true);
-        yield return new WaitForSeconds(10);
-        enemy1.SetActive(true);
-        yield return new WaitForSeconds(10);
-        enemy2.SetActive(true);
-        yield return new WaitForSeconds(10);
-        enemy3.SetActive(true);
-        yield return new WaitForSeconds(10);
-        enemy4.SetActive(true);
-        yield return new WaitForSeconds(10);
+    //    //enemy.SetActive(true);
+    //    yield return new WaitForSeconds(10);
+    //    enemy1.SetActive(true);
+    //    yield return new WaitForSeconds(10);
+    //    enemy2.SetActive(true);
+    //    yield return new WaitForSeconds(10);
+    //    enemy3.SetActive(true);
+    //    yield return new WaitForSeconds(10);
+    //    enemy4.SetActive(true);
+    //    yield return new WaitForSeconds(10);
         
-    }
+    //}
     private void Disable() 
     {
         gameObject.SetActive(false);
@@ -138,6 +138,10 @@ public class EnemySecondLevel : MonoBehaviour
             Invoke("Disable", 1.5f);
             level2TempBar.AddValue();
             player.slider.value -= 10;
+            if (player.slider.value != 0)
+            {
+                winScreen.SetActive(true);
+            }
         }
         if (collision.gameObject.name == "Tree2")
         {
@@ -168,10 +172,6 @@ public class EnemySecondLevel : MonoBehaviour
             Invoke("Disable", 1.5f);
             level2TempBar.AddValue();
             player.slider.value -= 10;
-            if(player.slider.value != 0)
-            {
-                winScreen.SetActive(true);
-            }
         }
         if (collision.gameObject.tag == "Finish")
         {
