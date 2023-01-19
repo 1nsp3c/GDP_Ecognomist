@@ -135,7 +135,6 @@ public class EnemySecondLevel : MonoBehaviour
             level2TempBar.AddValue();
             player.slider.value -= 10;
             player.PlayerTakeDmg();
-            endgame = true;
             CheckForWinCondition();
         }
         if (collision.gameObject.name == "Tree2")
@@ -161,19 +160,33 @@ public class EnemySecondLevel : MonoBehaviour
             player.PlayerTakeDmg();
             player.slider.value -= 10;
             CheckForWinCondition();
+            endgame = true;
         }
-        if (collision.gameObject.name == "Tree4")
+        //if (collision.gameObject.name == "Tree4")
+        //{
+        //    tree4.gameObject.SetActive(false);
+        //    treeFire4.SetActive(true);
+        //    animator.SetBool("Fire", true);
+        //    patrol = false;
+        //    Invoke("Disable", 1.5f);
+        //    level2TempBar.AddValue();
+        //    player.PlayerTakeDmg();
+        //    player.slider.value -= 10;
+        //    CheckForWinCondition();
+        //}
+
+        if (collision.gameObject.layer == 11)
         {
-            tree4.gameObject.SetActive(false);
-            treeFire4.SetActive(true);
-            animator.SetBool("Fire", true);
-            patrol = false;
-            Invoke("Disable", 1.5f);
-            level2TempBar.AddValue();
-            player.PlayerTakeDmg();
-            player.slider.value -= 10;
-            CheckForWinCondition();
+            Signboard signboard = GetComponent<Signboard>();
+            bool checkSignboard = signboard.yesPoster;
+            if (checkSignboard == false)
+                signboard.boxCollider2D.enabled = false;
+                
         }
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Finish")
         {
             gameObject.SetActive(false);
@@ -185,16 +198,6 @@ public class EnemySecondLevel : MonoBehaviour
             gameObject.SetActive(false);
             CheckForWinCondition();
         }
-
-        if (collision.gameObject.layer == 11)
-        {
-            Signboard signboard = GetComponent<Signboard>();
-            bool checkSignboard = signboard.yesPoster;
-            if (checkSignboard == false)
-                signboard.boxCollider2D.enabled = false;
-                
-        }
-
     }
 
 }
