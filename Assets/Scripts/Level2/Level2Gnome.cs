@@ -86,6 +86,7 @@ public class Level2Gnome : MonoBehaviour
         waterSprite.flipX = true;
         enemy1 = GetComponent<Enemy>();
         Physics2D.IgnoreLayerCollision(9, 10);
+        Physics2D.IgnoreLayerCollision(10, 12);
         //poster.SetActive(false);
     }
 

@@ -13,6 +13,8 @@ TagManager:
   - SB1
   - SB2
   - SB3
+  - Stick
+  - LastFinish
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - Tree
   - Player
   - Signboard
-  - 
+  - EnemyDisappear
   - 
   - 
   - 

@@ -7,7 +7,8 @@ public class EnemySecondLevel : MonoBehaviour
     public float range;
     public float walkSpeed = 10;
     public float bulletSpeed = 30;
-
+    
+    public bool endgame = false;
     private Rigidbody2D rb2d;
     private bool patrol;
     private bool canShoot;
@@ -102,6 +103,14 @@ public class EnemySecondLevel : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    //Checking if player can win the game or not
+    public void CheckForWinCondition()
+    {
+        if (player.slider.value != 0 && endgame)
+        {
+            winScreen.SetActive(true);
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Tree")
@@ -114,6 +123,7 @@ public class EnemySecondLevel : MonoBehaviour
             level2TempBar.AddValue();
             player.slider.value -= 10;
             player.PlayerTakeDmg();
+            CheckForWinCondition();
         }
         if (collision.gameObject.name == "Tree1")
         {
@@ -125,10 +135,8 @@ public class EnemySecondLevel : MonoBehaviour
             level2TempBar.AddValue();
             player.slider.value -= 10;
             player.PlayerTakeDmg();
-            if (player.slider.value != 0)
-            {
-                winScreen.SetActive(true);
-            }
+            endgame = true;
+            CheckForWinCondition();
         }
         if (collision.gameObject.name == "Tree2")
         {
@@ -140,6 +148,7 @@ public class EnemySecondLevel : MonoBehaviour
             level2TempBar.AddValue();
             player.PlayerTakeDmg();
             player.slider.value -= 10;
+            CheckForWinCondition();
         }
         if (collision.gameObject.name == "Tree3")
         {
@@ -151,6 +160,7 @@ public class EnemySecondLevel : MonoBehaviour
             level2TempBar.AddValue();
             player.PlayerTakeDmg();
             player.slider.value -= 10;
+            CheckForWinCondition();
         }
         if (collision.gameObject.name == "Tree4")
         {
@@ -162,17 +172,24 @@ public class EnemySecondLevel : MonoBehaviour
             level2TempBar.AddValue();
             player.PlayerTakeDmg();
             player.slider.value -= 10;
+            CheckForWinCondition();
         }
         if (collision.gameObject.tag == "Finish")
         {
             gameObject.SetActive(false);
+            CheckForWinCondition();
+        }
+        if (collision.gameObject.tag == "LastFinish")
+        {
+            endgame = true;
+            gameObject.SetActive(false);
+            CheckForWinCondition();
         }
 
         if (collision.gameObject.layer == 11)
         {
             Signboard signboard = GetComponent<Signboard>();
             bool checkSignboard = signboard.yesPoster;
-            Debug.Log("a");
             if (checkSignboard == false)
                 signboard.boxCollider2D.enabled = false;
                 

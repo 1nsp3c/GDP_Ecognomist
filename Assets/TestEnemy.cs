@@ -6,19 +6,21 @@ public class TestEnemy : MonoBehaviour
 {
     public GameObject[] enemies;
     public float timeBetween = 10f;
+    public GameObject[] indicatorText;
     // Start is called before the first frame update
     void Start()
     {
-        ShowTheCounting();
+        EnemySpawning();
     }
 
     // Update is called once per frame
     void Update()
     {
     } 
-    public void ShowTheCounting()
+    public void EnemySpawning()
     {
         StartCoroutine(Count());
+        StartCoroutine(IndicatorText());
     }
 
     public IEnumerator Count()
@@ -27,7 +29,16 @@ public class TestEnemy : MonoBehaviour
         {
             enemy.SetActive(true);
             // Waits for the time set in timeBetween, affected by timeScale.
-            yield return new WaitForSeconds(timeBetween); 
+            yield return new WaitForSeconds(timeBetween);
+        }
+    }
+    public IEnumerator IndicatorText()
+    {
+        foreach (GameObject indic in indicatorText)
+        {
+            indic.SetActive(true);
+            yield return new WaitForSeconds(7f);
+            indic.SetActive(false);
         }
     }
 }
