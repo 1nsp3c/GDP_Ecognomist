@@ -43,6 +43,7 @@ public class Level2Gnome : MonoBehaviour
     private GameObject collideSignboard;
     private bool inRange = false;
     private int postNSignCount;
+    public TextMeshProUGUI posterCount;
 
 
     public bool moveLeft1;
@@ -110,6 +111,14 @@ public class Level2Gnome : MonoBehaviour
         if (facingRight1 && moveLeft1)
         {
             Flip1();
+        }
+        if (havePoster) //Poster text manipulation
+        {
+            posterCount.text = "x 1";
+        }
+        else
+        {
+            posterCount.text = "x 0";
         }
 
         rb1.velocity = new Vector2(horizontalMove1, rb1.velocity.y);
@@ -286,6 +295,7 @@ public class Level2Gnome : MonoBehaviour
         if (collision.gameObject.tag == "Poster" && havePoster == false)
         {
             Destroy(collision.gameObject);
+            
             havePoster = true;
         }
 

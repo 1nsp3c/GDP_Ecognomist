@@ -37,7 +37,7 @@ public class TestEnemy : MonoBehaviour
         foreach (GameObject indic in indicatorText)
         {
             indic.SetActive(true);
-            yield return new WaitForSeconds(7f);
+            yield return new WaitForSeconds(8f);
             indic.SetActive(false);
         }
     }

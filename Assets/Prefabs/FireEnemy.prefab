@@ -153,6 +153,7 @@ MonoBehaviour:
   range: 20
   walkSpeed: 3
   bulletSpeed: 100
+  endgame: 0
   timeBetweenShots: 2
   shootSpeed: 100
   bodyCollider: {fileID: 4841074498902370464}
@@ -164,12 +165,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   energyBar: {fileID: 0}
+  winScreen: {fileID: 0}
+  enemySprite: {fileID: 8310659151908741788}
+  flippedEnemySprite: {fileID: 563605001, guid: 72010bf708ad1bf4eaf76e94a8e0f7d2, type: 3}
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  visibilityLayer:
-    serializedVersion: 2
-    m_Bits: 1032
   tree: {fileID: 0}
   treeFire: {fileID: 0}
   tree1: {fileID: 0}
@@ -180,14 +181,7 @@ MonoBehaviour:
   treeFire3: {fileID: 0}
   tree4: {fileID: 0}
   treeFire4: {fileID: 0}
-  tree5: {fileID: 0}
-  treeFire5: {fileID: 0}
   level2Gnome: {fileID: 0}
-  enemy: {fileID: 8310659151908741760}
-  enemy1: {fileID: 0}
-  enemy2: {fileID: 0}
-  enemy3: {fileID: 0}
-  enemy4: {fileID: 0}
   animator: {fileID: 8310659151908741790}
 --- !u!95 &8310659151908741790
 Animator:

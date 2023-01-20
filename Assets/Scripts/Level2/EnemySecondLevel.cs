@@ -23,6 +23,8 @@ public class EnemySecondLevel : MonoBehaviour
     public LayerMask groundLayer;
     public EnergyBar energyBar;
     public GameObject winScreen;
+    public SpriteRenderer enemySprite;
+    public Sprite flippedEnemySprite;
     public bool TargetVisible { get; private set; }
     [SerializeField]
     private LayerMask playerLayerMask;
