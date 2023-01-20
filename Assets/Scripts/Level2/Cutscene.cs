@@ -65,6 +65,7 @@ public class Cutscene : MonoBehaviour
     {
         if (mustFlip || bodyCollider.IsTouchingLayers())
         {
+            animator.SetBool("Flipped", true);
             Flip();
         }
         rb2d.velocity = new Vector2(walkSpeed, rb2d.velocity.y);

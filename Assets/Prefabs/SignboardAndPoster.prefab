@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6300540242803886542}
   - component: {fileID: 8069011178207940850}
   - component: {fileID: 7757342831728380736}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: SignboardAndPoster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8719511545018493541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8104625, y: 23.361452, z: 0}
-  m_LocalScale: {x: 0.9508, y: 0.9508, z: 0.9508}
+  m_LocalPosition: {x: 2.8104625, y: 24.58, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,12 +74,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f0186804c28892c41b5873a1fffbaf29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3902be0363de53845ad67aca0983a6d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6.83, y: 4.78}
+  m_Size: {x: 16, y: 12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,8 +102,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.83, y: 4.78}
-    newSize: {x: 6.83, y: 4.78}
+    oldSize: {x: 16, y: 12}
+    newSize: {x: 16, y: 12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

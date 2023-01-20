@@ -10,20 +10,20 @@ public class SignBoardText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        signboardText.gameObject.SetActive(false);
+        signboardText.gameObject.SetActive(true);
         Signboard = gameObject.GetComponentInParent<Signboard>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //RemoveSignboardText();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            signboardText.gameObject.SetActive(true);
+            //signboardText.gameObject.SetActive(true);
             Signboard.inRange = true;
         }
     }
@@ -32,8 +32,15 @@ public class SignBoardText : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            signboardText.gameObject.SetActive(false);
+            //signboardText.gameObject.SetActive(false);
             Signboard.inRange = false;
         }
     }
+    //public void RemoveSignboardText()
+    //{
+    //    if (Signboard.yesPoster)
+    //    {
+    //        signboardText.gameObject.SetActive(false);
+    //    }
+    //}
 }

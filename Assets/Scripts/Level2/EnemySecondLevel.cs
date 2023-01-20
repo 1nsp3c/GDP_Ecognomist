@@ -28,6 +28,7 @@ public class EnemySecondLevel : MonoBehaviour
     public bool TargetVisible { get; private set; }
     [SerializeField]
     private LayerMask playerLayerMask;
+    private int flipCount = 0;
 
 
     public GameObject tree;
@@ -89,7 +90,12 @@ public class EnemySecondLevel : MonoBehaviour
     {
         if (mustFlip || bodyCollider.IsTouchingLayers())
         {
-            Flip();
+           if (flipCount < 1)
+            {
+                flipCount += 1;
+                Flip();
+                animator.SetBool("Flipped", true);
+            }
         }
         rb2d.velocity = new Vector2(walkSpeed, rb2d.velocity.y);
     }
@@ -161,8 +167,8 @@ public class EnemySecondLevel : MonoBehaviour
             level2TempBar.AddValue();
             player.PlayerTakeDmg();
             player.slider.value -= 10;
-            CheckForWinCondition();
             endgame = true;
+            CheckForWinCondition();
         }
         //if (collision.gameObject.name == "Tree4")
         //{
@@ -197,6 +203,7 @@ public class EnemySecondLevel : MonoBehaviour
         if (collision.gameObject.tag == "LastFinish")
         {
             endgame = true;
+            Debug.Log("Last");
             gameObject.SetActive(false);
             CheckForWinCondition();
         }

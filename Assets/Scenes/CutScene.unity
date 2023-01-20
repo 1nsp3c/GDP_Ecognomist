@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.76214355, g: 0.7618885, b: 0.7618885, a: 1}
+  m_IndirectSpecularColor: {r: 0.7620996, g: 0.7619002, b: 0.7618312, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -679,7 +679,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Press E \nTo Plant"
+  m_text: 'Press Display
+
+    To Place'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86203d73405b928468f64497819b5867, type: 2}
   m_sharedMaterial: {fileID: -1384076849194464222, guid: 86203d73405b928468f64497819b5867, type: 2}
@@ -2088,6 +2090,7 @@ MonoBehaviour:
   fill1: {fileID: 117085959}
   playerSpriteRend: {fileID: 1307802648}
   poster: {fileID: 8719511545018493541, guid: 9ca7e009111d9c4468bacb3db2cbd35a, type: 3}
+  posterCount: {fileID: 0}
   moveLeft1: 0
   moveRight1: 0
   tempbar: {fileID: 0}
@@ -2136,7 +2139,12 @@ MonoBehaviour:
   tree: {fileID: 2119813187}
   treeFire: {fileID: 463044118}
   level2Gnome: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 1314806250}
+--- !u!95 &1314806250 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6521338148193006897, guid: fd91767d956889140ac70515f744cc57, type: 3}
+  m_PrefabInstance: {fileID: 1484931230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1450447167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,15 +2611,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6300540242803886542, guid: 9ca7e009111d9c4468bacb3db2cbd35a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.91498876
+      value: 0.42165428
       objectReference: {fileID: 0}
     - target: {fileID: 6300540242803886542, guid: 9ca7e009111d9c4468bacb3db2cbd35a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.91498876
+      value: 0.42165428
       objectReference: {fileID: 0}
     - target: {fileID: 6300540242803886542, guid: 9ca7e009111d9c4468bacb3db2cbd35a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.91498876
+      value: 0.42165428
       objectReference: {fileID: 0}
     - target: {fileID: 6300540242803886542, guid: 9ca7e009111d9c4468bacb3db2cbd35a, type: 3}
       propertyPath: m_LocalPosition.x

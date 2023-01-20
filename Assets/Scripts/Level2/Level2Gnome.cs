@@ -41,6 +41,7 @@ public class Level2Gnome : MonoBehaviour
     public GameObject poster;
     private Vector3 signboardPos;
     private GameObject collideSignboard;
+    //public SignBoardText signboardText;
     private bool inRange = false;
     private int postNSignCount;
     public TextMeshProUGUI posterCount;
@@ -88,6 +89,7 @@ public class Level2Gnome : MonoBehaviour
         enemy1 = GetComponent<Enemy>();
         Physics2D.IgnoreLayerCollision(9, 10);
         Physics2D.IgnoreLayerCollision(10, 12);
+        //signboardText = GetComponent<SignBoardText>();
         //poster.SetActive(false);
     }
 
