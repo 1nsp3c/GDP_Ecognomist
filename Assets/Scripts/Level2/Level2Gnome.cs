@@ -12,6 +12,7 @@ public class Level2Gnome : MonoBehaviour
     public float speed1 = 10f;
     public float jumpHeight1 = 10f;
     bool canDoubleJump1;
+    public bool die = false;
 
     public float timeBetweenShots1, shootSpeed1;
     public float fireRate1;
@@ -51,6 +52,7 @@ public class Level2Gnome : MonoBehaviour
     public bool moveRight1;
     private float horizontalMove1;
     public Level2TempBar tempbar;
+    public TestEnemy testEnemy;
     public GameObject WinScreen1;
     public GameObject loseScreen1;
     private Enemy enemy1;
@@ -82,6 +84,7 @@ public class Level2Gnome : MonoBehaviour
     {
         energyBar1.SetMaxEnergy(maxEnergy1);
         rb1 = GetComponent<Rigidbody2D>();
+        testEnemy = GetComponent<TestEnemy>();
         moveLeft1 = false;
         moveRight1 = false;
         WinScreen1.gameObject.SetActive(false);
@@ -265,7 +268,11 @@ public class Level2Gnome : MonoBehaviour
     {
         energyBar1.slider.value -= amount;
         fill1.color = energyGradient1.Evaluate(slider.normalizedValue);
-        StartCoroutine(FlashRed());
+        if (die == false)
+        {
+            StartCoroutine(FlashRed());
+        }
+        
 
         if (energyBar1.slider.value <= 0)
         {
@@ -284,7 +291,10 @@ public class Level2Gnome : MonoBehaviour
     }
     public void PlayerTakeDmg()
     {
-        StartCoroutine(FlashRed());
+        if (die == false)
+        {
+            StartCoroutine(FlashRed());
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -292,6 +302,7 @@ public class Level2Gnome : MonoBehaviour
         {
             loseScreen1.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            die = true;
         }
 
         if (collision.gameObject.tag == "Poster" && havePoster == false)

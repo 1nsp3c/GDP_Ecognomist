@@ -12,12 +12,12 @@ public class LevelManager : MonoBehaviour
     public void level1()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Level1");
     }
     public void level2()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("CutScene");
     }
     //public void level3()
     //{

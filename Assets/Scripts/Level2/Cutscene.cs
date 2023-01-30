@@ -98,7 +98,7 @@ public class Cutscene : MonoBehaviour
         if (collision.gameObject.tag == "Finish")
         {
             gameObject.SetActive(false);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene("Level2");
         }
 
         if (collision.gameObject.layer == 11)

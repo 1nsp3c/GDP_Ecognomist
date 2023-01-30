@@ -130,7 +130,10 @@ public class EnemySecondLevel : MonoBehaviour
             Invoke("Disable", 1.5f);
             level2TempBar.AddValue();
             player.slider.value -= 10;
-            player.PlayerTakeDmg();
+            if (player.die == false)
+            {
+                player.PlayerTakeDmg();
+            }
             CheckForWinCondition();
         }
         if (collision.gameObject.name == "Tree1")
@@ -142,7 +145,10 @@ public class EnemySecondLevel : MonoBehaviour
             Invoke("Disable", 1.5f);
             level2TempBar.AddValue();
             player.slider.value -= 10;
-            player.PlayerTakeDmg();
+            if (player.die == false)
+            {
+                player.PlayerTakeDmg();
+            }
             CheckForWinCondition();
         }
         if (collision.gameObject.name == "Tree2")
@@ -153,7 +159,10 @@ public class EnemySecondLevel : MonoBehaviour
             patrol = false;
             Invoke("Disable", 1.5f);
             level2TempBar.AddValue();
-            player.PlayerTakeDmg();
+            if (player.die == false)
+            {
+                player.PlayerTakeDmg();
+            }
             player.slider.value -= 10;
             CheckForWinCondition();
         }
@@ -165,7 +174,10 @@ public class EnemySecondLevel : MonoBehaviour
             patrol = false;
             Invoke("Disable", 1.5f);
             level2TempBar.AddValue();
-            player.PlayerTakeDmg();
+            if (player.die == false)
+            {
+                player.PlayerTakeDmg();
+            }
             player.slider.value -= 10;
             endgame = true;
             CheckForWinCondition();
