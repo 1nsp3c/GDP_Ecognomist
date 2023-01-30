@@ -117,6 +117,7 @@ public class EnemySecondLevel : MonoBehaviour
         if (player.slider.value != 0 && endgame)
         {
             winScreen.SetActive(true);
+            level2Gnome.PlayerDead();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

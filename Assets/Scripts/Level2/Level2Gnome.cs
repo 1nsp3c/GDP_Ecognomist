@@ -31,6 +31,7 @@ public class Level2Gnome : MonoBehaviour
     bool facingRight1 = true;
     bool isRunning = false;
     public Animator animator1;
+    public GameObject[] enemies;
 
     public EnergyBar energyBar1;
     public Transform groundCheck1;
@@ -52,6 +53,8 @@ public class Level2Gnome : MonoBehaviour
     public bool moveRight1;
     private float horizontalMove1;
     public Level2TempBar tempbar;
+    public EnemySecondLevel enemySecondLevel;
+    public Level2Gnome level2Gnome;
     public TestEnemy testEnemy;
     public GameObject WinScreen1;
     public GameObject loseScreen1;
@@ -82,9 +85,11 @@ public class Level2Gnome : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemySecondLevel = (EnemySecondLevel)FindObjectOfType(typeof(EnemySecondLevel));
+        level2Gnome = FindObjectOfType<Level2Gnome>();
         energyBar1.SetMaxEnergy(maxEnergy1);
         rb1 = GetComponent<Rigidbody2D>();
-        testEnemy = GetComponent<TestEnemy>();
+        testEnemy = FindObjectOfType<TestEnemy>();
         moveLeft1 = false;
         moveRight1 = false;
         WinScreen1.gameObject.SetActive(false);
@@ -100,6 +105,10 @@ public class Level2Gnome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if(gameObject.active == false)
+        //{
+        //    Time.timeScale = 0f;
+        //}
         CheckMaxTemp1();
         Jumping1();
         MovePlayer1();
@@ -233,21 +242,6 @@ public class Level2Gnome : MonoBehaviour
             }
         }
     }
-    IEnumerator Shoot1()
-    {
-        if (Time.time > nextFire1)
-        {
-            nextFire1 = Time.time + fireRate1;
-            animator1.SetTrigger("WaterGun");
-            yield return new WaitForSeconds(timeBetweenShots1);
-            GameObject newBullet = Instantiate(sticks1, shootPos1.position, Quaternion.identity);
-            newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(shootSpeed1 * speed1, 0);
-        }
-    }
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-
-    //}
     void CheckMaxTemp1()
     {
         if (tempbar.slider.value == tempbar.slider.maxValue)
@@ -277,8 +271,9 @@ public class Level2Gnome : MonoBehaviour
         if (energyBar1.slider.value <= 0)
         {
             loseScreen1.gameObject.SetActive(true);
+            PlayerDead();
             gameObject.SetActive(false);
-
+            Time.timeScale = 0;
         }
     }
 
@@ -296,12 +291,20 @@ public class Level2Gnome : MonoBehaviour
             StartCoroutine(FlashRed());
         }
     }
+    public void PlayerDead()
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.SetActive(false);
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
             loseScreen1.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            PlayerDead();
             die = true;
         }
 
