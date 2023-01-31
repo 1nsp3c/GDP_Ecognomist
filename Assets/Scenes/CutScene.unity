@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.7620996, g: 0.7619002, b: 0.7618312, a: 1}
+  m_IndirectSpecularColor: {r: 0.76214355, g: 0.7618885, b: 0.7618885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1399,7 +1399,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 24
+  field of view: 19.45921
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1425,7 +1425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680604321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.1, y: 7.8, z: -98.4}
+  m_LocalPosition: {x: 13.9, y: 7, z: -98.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2044,6 +2044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed1: 10
   jumpHeight1: 30
+  die: 0
   timeBetweenShots1: 0.5
   shootSpeed1: 5
   fireRate1: 1
@@ -2082,6 +2083,7 @@ MonoBehaviour:
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   animator1: {fileID: 1307802643}
+  enemies: []
   energyBar1: {fileID: 1307802640}
   groundCheck1: {fileID: 1307802639}
   groundLayer1:
@@ -2094,6 +2096,9 @@ MonoBehaviour:
   moveLeft1: 0
   moveRight1: 0
   tempbar: {fileID: 0}
+  enemySecondLevel: {fileID: 0}
+  level2Gnome: {fileID: 0}
+  testEnemy: {fileID: 0}
   WinScreen1: {fileID: 0}
   loseScreen1: {fileID: 0}
   enemySpawner: {fileID: 0}
