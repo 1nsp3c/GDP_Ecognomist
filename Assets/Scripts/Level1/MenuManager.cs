@@ -13,6 +13,10 @@ public class MenuManager : MonoBehaviour
     }
     public void levelSelect()
     {
+        SceneManager.LoadScene("Level Select");
+    }
+    public void Cutscene()
+    {
         SceneManager.LoadScene("CutScene");
     }
 }

@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 16633904}
   - component: {fileID: 16633903}
   m_Layer: 5
-  m_Name: homeButton
+  m_Name: nextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,7 +354,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2005260277}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: levelSelect
+        m_MethodName: Cutscene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8670,8 +8670,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: -157.3}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 79.5, y: -157.48}
+  m_SizeDelta: {x: 45.844, y: 46.355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1558164420
 MonoBehaviour:
@@ -8749,7 +8749,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 135840643, guid: efece2e7b4623c1429781cf5dea1ad84, type: 3}
+  m_Sprite: {fileID: 1000254662, guid: a5abd4e6e287ed841ad9ccc7b23adece, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10076,7 +10076,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2005260277}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: levelSelect
+        m_MethodName: Cutscene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
