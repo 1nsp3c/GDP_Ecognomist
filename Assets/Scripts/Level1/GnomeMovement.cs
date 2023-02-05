@@ -230,9 +230,6 @@ public class GnomeMovement : MonoBehaviour
                 collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
             }
         }
-
-
-
         if (collision.gameObject.name == "Tree" && collectArray.Count == 1)
         {
             collectArray.Clear(); //Removes all elements from the arraylist
@@ -339,5 +336,9 @@ public class GnomeMovement : MonoBehaviour
         seedPlanted = true;
         yield return new WaitForSeconds(0.1f);
         seedPlanted = false;
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        
     }
 }

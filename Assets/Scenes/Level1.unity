@@ -2323,6 +2323,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334018, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: boxCollider2D
+      value: 
+      objectReference: {fileID: 1131384698}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2935,6 +2939,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad617c4b6c56a784e97ac61b50a3a190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &744270708 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+  m_PrefabInstance: {fileID: 2069564026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &757173342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,6 +3164,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &758926447 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+  m_PrefabInstance: {fileID: 776469178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &761080424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3300,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334018, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: boxCollider2D
+      value: 
+      objectReference: {fileID: 758926447}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -4304,6 +4322,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &882821990 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+  m_PrefabInstance: {fileID: 2056630741989768039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &883021618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6307,6 +6330,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1131384698 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+  m_PrefabInstance: {fileID: 550517676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1162137003
 GameObject:
   m_ObjectHideFlags: 0
@@ -10693,6 +10721,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334018, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: boxCollider2D
+      value: 
+      objectReference: {fileID: 744270708}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -11279,6 +11311,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 882821987}
+    - target: {fileID: 2056630742218334018, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: boxCollider2D
+      value: 
+      objectReference: {fileID: 882821990}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_RootOrder
       value: 10

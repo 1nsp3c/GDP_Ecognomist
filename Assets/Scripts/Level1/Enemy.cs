@@ -136,6 +136,7 @@ public class Enemy : MonoBehaviour
             float posY = gameObject.transform.position.y;
 
             tree.transform.position = new Vector2(posX, posY + 1);
+            //tree.boxCollider2D.enabled = false;
 
             textMeshText.gameObject.transform.position = new Vector2(tree.transform.position.x + 1, tree.transform.position.y);
             textMeshText.gameObject.SetActive(true);
@@ -150,6 +151,7 @@ public class Enemy : MonoBehaviour
             float posY = gameObject.transform.position.y;
 
             tree1.transform.position = new Vector2(posX, posY + 1);
+            //tree1.boxCollider2D.enabled = false;
 
             textMeshText1.gameObject.transform.position = new Vector2(tree1.transform.position.x + 1, tree1.transform.position.y);
             textMeshText1.gameObject.SetActive(true);
@@ -165,6 +167,7 @@ public class Enemy : MonoBehaviour
             float posY = gameObject.transform.position.y;
 
             tree2.transform.position = new Vector2(posX, posY + 1);
+            //tree2.boxCollider2D.enabled = false;
 
             textMeshText2.transform.position = new Vector2(tree2.transform.position.x, tree2.transform.position.y);
             textMeshText2.gameObject.SetActive(true);
@@ -179,6 +182,7 @@ public class Enemy : MonoBehaviour
             float posY = gameObject.transform.position.y;
 
             tree3.transform.position = new Vector2(posX, posY + 1);
+            //tree3.boxCollider2D.enabled = false;
 
             textMeshText3.gameObject.transform.position = new Vector2(tree3.transform.position.x + 1, tree3.transform.position.y);
             textMeshText3.gameObject.SetActive(true);
@@ -193,6 +197,7 @@ public class Enemy : MonoBehaviour
             float posY = gameObject.transform.position.y;
 
             tree4.transform.position = new Vector2(posX, posY + 1);
+            //tree4.boxCollider2D.enabled = false;
 
             textMeshText4.gameObject.transform.position = new Vector2(tree4.transform.position.x + 1, tree4.transform.position.y);
             textMeshText4.gameObject.SetActive(true);
