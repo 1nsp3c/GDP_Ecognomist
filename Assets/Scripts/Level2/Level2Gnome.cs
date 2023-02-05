@@ -234,7 +234,6 @@ public class Level2Gnome : MonoBehaviour
             inRange = signboard.inRange;
             if (inRange)
             {
-                //Instantiate(poster, new Vector3(signboardPos.x - 0.1f, signboardPos.y + 0.15f, signboardPos.z), Quaternion.identity);
                 havePoster = false;
                 signboard.yesPoster = true;
                 Destroy(collideSignboard);
