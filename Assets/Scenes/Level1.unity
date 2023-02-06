@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334019, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -2846,6 +2850,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f5aafc08b740ae74fb33a160ebbd8a2c, type: 3}
     - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
       objectReference: {fileID: 0}
@@ -3822,6 +3830,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f5aafc08b740ae74fb33a160ebbd8a2c, type: 3}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
@@ -12082,6 +12094,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: f5aafc08b740ae74fb33a160ebbd8a2c, type: 3}
     - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
       value: 0.5
       objectReference: {fileID: 0}
@@ -12695,6 +12711,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2056630742218334016, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2056630742218334018, guid: 210874b648fd5194f87b20f731dce0f2, type: 3}
       propertyPath: animator
       value: 
