@@ -249,6 +249,7 @@ public class GnomeMovement : MonoBehaviour
 
         if (seedCounts == 5)
         {
+            Debug.Log("hi");
             Time.timeScale = 0;
             WinScreen.gameObject.SetActive(true);
             rb.gameObject.SetActive(false);
