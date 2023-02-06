@@ -52,7 +52,7 @@ public class GnomeMovement : MonoBehaviour
     //public Collider2D colButton;  //collider at the end of a level
     public GameObject seedText;
     private TextMeshProUGUI textMeshSeed;
-    private int seedCounts = 0;
+    public int seedCounts = 0;
     public bool seedPlanted;
 
     [Header("Trees")]
@@ -111,6 +111,7 @@ public class GnomeMovement : MonoBehaviour
         CheckMaxTemp();
         Jumping();
         MovePlayer();
+        WinCondition();
         if (energyBar.slider.value <= 0)
         {
             loseScreen.gameObject.SetActive(true);
@@ -129,6 +130,15 @@ public class GnomeMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
 
         animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
+    }
+    public void WinCondition()
+    {
+        if (seedCounts >= 5)
+        {
+            //Time.timeScale = 0;
+            WinScreen.gameObject.SetActive(true);
+            rb.gameObject.SetActive(false);
+        }
     }
 
     public void PauseGame() 
@@ -244,16 +254,6 @@ public class GnomeMovement : MonoBehaviour
                 collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
             }
         }
-        
-
-
-        if (seedCounts == 5)
-        {
-            Time.timeScale = 0;
-            WinScreen.gameObject.SetActive(true);
-            rb.gameObject.SetActive(false);
-
-        }
 
         if (collision.gameObject.layer == 6)
         {
@@ -354,9 +354,5 @@ public class GnomeMovement : MonoBehaviour
         seedPlanted = true;
         yield return new WaitForSeconds(0.1f);
         seedPlanted = false;
-    }
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        
     }
 }
