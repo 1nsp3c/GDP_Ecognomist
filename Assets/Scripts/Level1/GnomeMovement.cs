@@ -254,6 +254,20 @@ public class GnomeMovement : MonoBehaviour
                 collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
             }
         }
+<<<<<<< HEAD
+        
+
+
+        if (seedCounts == 5)
+        {
+            Debug.Log("hi");
+            Time.timeScale = 0;
+            WinScreen.gameObject.SetActive(true);
+            rb.gameObject.SetActive(false);
+
+        }
+=======
+>>>>>>> 9c6c29801c65c0f86bba5200fc5cf9c4f616f7e8
 
         if (collision.gameObject.layer == 6)
         {

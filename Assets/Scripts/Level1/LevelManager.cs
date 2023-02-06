@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public void mainMenu()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
     public void level1()
     {
@@ -19,9 +19,4 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("CutScene");
     }
-    //public void level3()
-    //{
-    //    Time.timeScale = 1;
-    //    SceneManager.LoadScene(3);
-    //}
 }
