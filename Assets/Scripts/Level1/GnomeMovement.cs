@@ -230,6 +230,25 @@ public class GnomeMovement : MonoBehaviour
                 collectArray.Add(collision.gameObject); //Adds the seed_bag into the Arraylist
             }
         }
+        
+
+
+        if (seedCounts == 5)
+        {
+            Time.timeScale = 0;
+            WinScreen.gameObject.SetActive(true);
+            rb.gameObject.SetActive(false);
+
+        }
+
+        if (collision.gameObject.layer == 6)
+        {
+            loseScreen.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
         if (collision.gameObject.name == "Tree" && collectArray.Count == 1)
         {
             collectArray.Clear(); //Removes all elements from the arraylist
@@ -280,21 +299,6 @@ public class GnomeMovement : MonoBehaviour
             StartCoroutine(TempSpeedReduction());
             textMeshText4.gameObject.SetActive(false);
             seedCounts += 1;
-        }
-
-
-        if (seedCounts == 5)
-        {
-            Time.timeScale = 0;
-            WinScreen.gameObject.SetActive(true);
-            rb.gameObject.SetActive(false);
-
-        }
-
-        if (collision.gameObject.layer == 6)
-        {
-            loseScreen.gameObject.SetActive(true);
-            gameObject.SetActive(false);
         }
     }
     void CheckMaxTemp()
