@@ -67,6 +67,7 @@ public class GnomeMovement : MonoBehaviour
     public TextMeshProUGUI textMeshText3;
     public TextMeshProUGUI textMeshText4;
 
+    public GameObject pauseScreen;
     public float damageCooldown;
     [HideInInspector] public float damageTimer;
 
@@ -129,6 +130,13 @@ public class GnomeMovement : MonoBehaviour
 
         animator.SetFloat("PosX", Mathf.Abs(rb.velocity.x * 10f));
     }
+
+    public void PauseGame() 
+    {
+        Time.timeScale = 0;
+        pauseScreen.gameObject.SetActive(true);
+    }
+
     public bool isGrounded()
     {
         animator.SetTrigger("Jump");
