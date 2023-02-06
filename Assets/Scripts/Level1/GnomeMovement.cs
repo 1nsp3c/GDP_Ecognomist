@@ -137,6 +137,12 @@ public class GnomeMovement : MonoBehaviour
         pauseScreen.gameObject.SetActive(true);
     }
 
+    public void ResumeGame() 
+    {
+        Time.timeScale = 1;
+        pauseScreen.gameObject.SetActive(false);
+    }
+
     public bool isGrounded()
     {
         animator.SetTrigger("Jump");

@@ -63,7 +63,7 @@ public class Level2Gnome : MonoBehaviour
 
     public float damageCooldown1;
     [HideInInspector] public float damageTimer1;
-
+    public GameObject pauseScreen;
     public bool havePoster = false;
 
     public void PointerDownLeft()
@@ -152,6 +152,17 @@ public class Level2Gnome : MonoBehaviour
         //        Instantiate(poster, signboardPos, Quaternion.identity);
         //    }
         //}
+    }
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        pauseScreen.gameObject.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseScreen.gameObject.SetActive(false);
     }
     public bool isGrounded1()
     {
