@@ -111,7 +111,7 @@ public class GnomeMovement : MonoBehaviour
         CheckMaxTemp();
         Jumping();
         MovePlayer();
-        WinCondition();
+        //WinCondition();
         if (energyBar.slider.value <= 0)
         {
             loseScreen.gameObject.SetActive(true);
